@@ -1,50 +1,25 @@
----
-interface Props {
-  title: string;
-  href: string;
-}
-const { title, href } = Astro.props;
----
-
-<nav class="navBar">
-  <ul class="list">
-    <li class="item">
-      <a class="link" href={href}>Home</a>
+<nav class="flex justify-between">
+  <ul class="p-0 flex text-[#3e2c26]">
+    <li class="">
+      <a class="" href="#">Home</a>
     </li>
-    <li class="item">
-      <a class="link" href={href}>About Us</a>
+    <li class="ml-[25px]">
+      <a class="" href="#">About Us</a>
     </li>
-    <li class="item">
-      <a class="link" href={href}>Services</a>
+    <li class="ml-[25px]">
+      <a class="" href="#">Services</a>
     </li>
-    <li class="item">
-      <a class="link" href={href}>Feature</a>
+    <li class="ml-[25px]">
+      <a class="" href="#">Feature</a>
     </li>
   </ul>
-  <ul class="list">
-    <li class="item">
-      <a class="link" href={href}>Testimonial</a>
+
+  <ul class="p-0 flex">
+    <li class="">
+      <a class="" href="#">Testimonial</a>
     </li>
-    <li class="item">
-      <a class="link" href={href}>Contact</a>
+    <li class="ml-[25px]">
+      <a class="" href="#">Contact</a>
     </li>
   </ul>
 </nav>
-
-<style>
-  .navBar {
-    display: flex;
-    justify-content: space-between;
-  }
-  .list {
-    display: flex;
-    :not(:first-child) {
-      margin-left: 20px;
-    }
-  }
-  li {
-  }
-  .link {
-    color: #3e2c26;
-  }
-</style>
