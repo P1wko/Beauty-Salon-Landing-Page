@@ -6,6 +6,45 @@ interface Props {
 const { title, href } = Astro.props;
 ---
 
-<li>
-  <a href={href}>{title}</a>
-</li>
+<nav class="navBar">
+  <ul class="list">
+    <li class="item">
+      <a class="link" href={href}>Home</a>
+    </li>
+    <li class="item">
+      <a class="link" href={href}>About Us</a>
+    </li>
+    <li class="item">
+      <a class="link" href={href}>Services</a>
+    </li>
+    <li class="item">
+      <a class="link" href={href}>Feature</a>
+    </li>
+  </ul>
+  <ul class="list">
+    <li class="item">
+      <a class="link" href={href}>Testimonial</a>
+    </li>
+    <li class="item">
+      <a class="link" href={href}>Contact</a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  .navBar {
+    display: flex;
+    justify-content: space-between;
+  }
+  .list {
+    display: flex;
+    :not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+  li {
+  }
+  .link {
+    color: #3e2c26;
+  }
+</style>
