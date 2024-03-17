@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin');
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -15,5 +17,25 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addComponents, theme }) {
+      const components = {
+        '.title': {
+          fontSize: '30px',
+          fontWeight: 'bold',
+        },
+        '.sectionTitle': {
+          color: theme('colors.accent'),
+          fontWeight: 'bold',
+        },
+        '.accentButton': {
+          background: theme('colors.accent'),
+          color: theme('colors.white'),
+          borderRadius: '10px',
+          padding: '15px 25px',
+        },
+      };
+      addComponents(components);
+    }),
+  ],
 };
