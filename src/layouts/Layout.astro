@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import AboutUs from '../components/AboutUs.astro';
+import Services from '../components/Services.astro';
 
 interface Props {
   title: string;
@@ -19,70 +20,11 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="max-w-[1440px]">
     <Header />
     <main>
       <AboutUs />
-      <section class="services text-center">
-        <p class="sectionTitle">SERVICES</p>
-        <h2 class="title">We experienced in making you more beautiful</h2>
-        <ul class="flex">
-          <li class="flex flex-col items-center">
-            <div class="w-[30px] h-[30px] bg-accent">sss</div>
-            <h3 class="font-bold">HAIR TREATMENT</h3>
-            <p class="">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-              adipisci natus culpa molestiae dolor cupiditate, reiciendis
-              impedit repellat fugiat. A, odit.
-            </p>
-          </li>
-          <li class="flex flex-col items-center">
-            <div class="w-[30px] h-[30px] bg-accent">sss</div>
-            <h3 class="font-bold">HAIR TREATMENT</h3>
-            <p class="">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-              adipisci natus culpa molestiae dolor cupiditate, reiciendis
-              impedit repellat fugiat. A, odit.
-            </p>
-          </li>
-          <li class="flex flex-col items-center">
-            <div class="w-[30px] h-[30px] bg-accent">sss</div>
-            <h3 class="font-bold">HAIR TREATMENT</h3>
-            <p class="">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-              adipisci natus culpa molestiae dolor cupiditate, reiciendis
-              impedit repellat fugiat. A, odit.
-            </p>
-          </li>
-          <li class="flex flex-col items-center">
-            <div class="w-[30px] h-[30px] bg-accent">sss</div>
-            <h3 class="font-bold">HAIR TREATMENT</h3>
-            <p class="">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-              adipisci natus culpa molestiae dolor cupiditate, reiciendis
-              impedit repellat fugiat. A, odit.
-            </p>
-          </li>
-          <li class="flex flex-col items-center">
-            <div class="w-[30px] h-[30px] bg-accent">sss</div>
-            <h3 class="font-bold">HAIR TREATMENT</h3>
-            <p class="">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-              adipisci natus culpa molestiae dolor cupiditate, reiciendis
-              impedit repellat fugiat. A, odit.
-            </p>
-          </li>
-          <li class="flex flex-col items-center">
-            <div class="w-[30px] h-[30px] bg-accent">sss</div>
-            <h3 class="font-bold">HAIR TREATMENT</h3>
-            <p class="">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-              adipisci natus culpa molestiae dolor cupiditate, reiciendis
-              impedit repellat fugiat. A, odit.
-            </p>
-          </li>
-        </ul>
-      </section>
+      <Services />
       <section class="banner"></section>
       <section class="bestSellers"></section>
       <section class="ourExperts"></section>

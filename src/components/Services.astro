@@ -1,0 +1,47 @@
+---
+import ServiceCardItem from './ServiceCardItem.astro';
+const servicesList = [
+  {
+    title: 'HAIR TREATMENT',
+    description:
+      ' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, hic blanditiis. Voluptates, placeat ab minima repellat explicabo repellendus nemo totam!',
+  },
+  {
+    title: 'MAKU-UP',
+    description:
+      ' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, hic blanditiis. Voluptates, placeat ab minima repellat explicabo repellendus nemo totam!',
+  },
+  {
+    title: 'MENI/PEDI SERVICES',
+    description:
+      ' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, hic blanditiis. Voluptates, placeat ab minima repellat explicabo repellendus nemo totam!',
+  },
+  {
+    title: 'PARTY/WEDDING EVENT',
+    description:
+      ' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, hic blanditiis. Voluptates, placeat ab minima repellat explicabo repellendus nemo totam!',
+  },
+  {
+    title: 'COSMETIC SERVICES',
+    description:
+      ' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, hic blanditiis. Voluptates, placeat ab minima repellat explicabo repellendus nemo totam!',
+  },
+  {
+    title: 'MASSAGE SERVICES',
+    description:
+      ' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, hic blanditiis. Voluptates, placeat ab minima repellat explicabo repellendus nemo totam!',
+  },
+];
+---
+
+<section class="services text-center">
+  <p class="sectionTitle">SERVICES</p>
+  <h2 class="title">We experienced in making you more beautiful</h2>
+  <ul class="flex flex-wrap">
+    {
+      servicesList.map(({ title, description }) => (
+        <ServiceCardItem title={title} description={description} />
+      ))
+    }
+  </ul>
+</section>
