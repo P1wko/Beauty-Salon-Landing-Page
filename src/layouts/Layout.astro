@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import AboutUs from '../components/AboutUs.astro';
 import Services from '../components/Services.astro';
+import BestSellers from '../components/BestSellers.astro';
 
 interface Props {
   title: string;
@@ -26,7 +27,7 @@ const { title } = Astro.props;
       <AboutUs />
       <Services />
       <section class="banner"></section>
-      <section class="bestSellers"></section>
+      <BestSellers />
       <section class="ourExperts"></section>
       <section class="testinaial"></section>
       <section class="appoinment"></section>

@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        white: '#fbf3f7',
+        pinkLight: '#fbf3f7',
         accent: '#f55b79',
         gray: '#c0aeb0',
         pink: '#f28daf',

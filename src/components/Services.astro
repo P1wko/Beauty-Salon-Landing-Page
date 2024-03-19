@@ -34,10 +34,10 @@ const servicesList = [
 ];
 ---
 
-<section class="services text-center">
+<section class="services text-center bg-pinkLight py-[70px] px-[60px]">
   <p class="sectionTitle">SERVICES</p>
   <h2 class="title">We experienced in making you more beautiful</h2>
-  <ul class="flex flex-wrap">
+  <ul class="flex flex-wrap gap-[30px] justify-center mt-[35px]">
     {
       servicesList.map(({ title, description }) => (
         <ServiceCardItem title={title} description={description} />
