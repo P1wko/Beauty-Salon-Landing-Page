@@ -1,0 +1,22 @@
+---
+interface Props {
+  image?: string;
+  title: string;
+  description: string;
+  price: string;
+}
+const { title, description, price } = Astro.props;
+---
+
+<li class="w-[30%] pb-[20px]">
+  <div class="h-[250px] rounded-t-lg bg-accent">image</div>
+  <div
+    class="border border-pinkLight rounded-b-lg border-t-0 px-[20px] shadow-lg"
+  >
+    <h3 class="font-bold mt-[15px]">{title}</h3>
+    <p class="mt-[10px] font-light">
+      {description}
+    </p>
+    <p class="sectionTitle mt-[20px]">$ {price}</p>
+  </div>
+</li>

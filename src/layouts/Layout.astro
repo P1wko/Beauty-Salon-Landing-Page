@@ -1,5 +1,6 @@
 ---
-import Header from '../components/Header.astro';
+import NavBar from '../components/NavBar.astro';
+import Hero from '../components/Hero.astro';
 import AboutUs from '../components/AboutUs.astro';
 import Services from '../components/Services.astro';
 import BestSellers from '../components/BestSellers.astro';
@@ -21,9 +22,12 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="max-w-[1440px]">
-    <Header />
-    <main>
+  <body class="max-w-[1440px] leading-tight">
+    <header class="px-[60px] mx-auto pt-[45px]">
+      <NavBar />
+      <Hero />
+    </header>
+    <main class="px-[60px] mx-auto">
       <AboutUs />
       <Services />
       <section class="banner"></section>
@@ -52,12 +56,6 @@ const { title } = Astro.props;
       /* font-family: system-ui, sans-serif; */
       /* background: #13151a; */
       /* background-size: 224px; */
-      ul {
-        list-style-type: none;
-      }
-      a {
-        text-decoration: none;
-      }
     }
     code {
       font-family:
