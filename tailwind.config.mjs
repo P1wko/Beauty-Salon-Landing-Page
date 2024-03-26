@@ -18,7 +18,7 @@ export default {
     },
   },
   plugins: [
-    plugin(function ({ addComponents, theme }) {
+    plugin(function ({ addComponents, theme, addBase }) {
       const components = {
         '.title': {
           fontSize: '30px',
@@ -36,6 +36,15 @@ export default {
         },
       };
       addComponents(components);
+      addBase({
+        html: {
+          scrollBehavior: 'smooth',
+        },
+        body: {
+          maxWidth: '1440px',
+          lineHeight: '1.4',
+        },
+      });
     }),
   ],
 };
