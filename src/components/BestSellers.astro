@@ -22,10 +22,10 @@ const bestSellersList = [
 ];
 ---
 
-<section class="text-center py-[70px] flex flex-col items-center">
+<section class="text-center py-[70px] px-[60px] flex flex-col items-center">
   <p class="sectionTitle">BEST SELLERS</p>
   <h2 class="title w-1/4 mt-[20px]">Our featured beauty treatment</h2>
-  <ul class="flex gap-4 px-[100px] mt-[40px] flex-wrap">
+  <ul class="flex gap-8 mt-[40px] flex-wrap justify-center">
     {
       bestSellersList.map(({ title, description, price }) => (
         <BestSellersCardItem
