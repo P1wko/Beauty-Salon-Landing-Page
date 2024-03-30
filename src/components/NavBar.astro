@@ -1,4 +1,9 @@
-<nav class="flex justify-between">
+---
+import { Image } from 'astro:assets';
+import logo from '../images/logo.png';
+---
+
+<nav class="flex justify-between relative items-center">
   <ul class="p-0 flex text-[#3e2c26]">
     <li>
       <a href="/">Home</a>
@@ -13,7 +18,11 @@
       <a href="/">Feature</a>
     </li>
   </ul>
-
+  <Image
+    class="absolute left-1/2 -translate-x-1/2 w-[200px] mt-12"
+    src={logo}
+    alt="logo"
+  />
   <ul class="p-0 flex">
     <li>
       <a href="/">Testimanial</a>
