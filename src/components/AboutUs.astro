@@ -1,6 +1,11 @@
+---
+import { Image } from 'astro:assets';
+import relax from '../images/relax.webp';
+---
+
 <section class="flex my-[100px]" id="aboutUs">
   <div class="w-1/2 flex justify-center items-center">
-    <div class="w-[300px] h-[300px] bg-accent">image</div>
+    <Image class="w-2/3 rounded-lg" src={relax} alt="relax image" />
   </div>
   <div class="w-1/2 pr-[30px]">
     <p class="sectionTitle">ABOUT US</p>
