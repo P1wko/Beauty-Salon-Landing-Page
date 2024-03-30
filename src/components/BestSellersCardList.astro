@@ -1,0 +1,39 @@
+---
+import Image from 'astro/components/Image.astro';
+import heirRebonding from '../images/heirRebonding.webp';
+const bestSellersList = [
+  {
+    image: heirRebonding,
+    title: 'Heir Rebonding',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+    price: '250',
+  },
+  {
+    image: heirRebonding,
+    title: 'Hurbal Skincare',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+    price: '350',
+  },
+  {
+    image: heirRebonding,
+    title: 'Eyelash Extension',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+    price: '299',
+  },
+];
+---
+
+<ul class="flex mt-[40px] flex-wrap justify-between">
+  {
+    bestSellersList.map(({ title, description, price, image }) => (
+      <li class="w-[32%] cursor-pointer rounded-b-lg  shadow-lg hover:shadow-2xl">
+        <Image class="rounded-t-lg" src={image} alt="image" />
+        <div class="border border-pinkLight  border-t-0 px-[20px]  pb-[20px]">
+          <h3 class="font-bold mt-[15px]">{title}</h3>
+          <p class="mt-[10px] font-light">{description}</p>
+          <p class="sectionTitle mt-[20px]">$ {price}</p>
+        </div>
+      </li>
+    ))
+  }
+</ul>

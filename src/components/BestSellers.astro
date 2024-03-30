@@ -1,40 +1,9 @@
 ---
-import BestSellersCardItem from './BestSellersCardItem.astro';
-
-const bestSellersList = [
-  {
-    image: '',
-    title: 'Heir Rebonding',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
-    price: '250',
-  },
-  {
-    image: '',
-    title: 'Hurbal Skincare',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
-    price: '350',
-  },
-  {
-    image: '',
-    title: 'Eyelash Extension',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
-    price: '299',
-  },
-];
+import BestSellersCardList from './BestSellersCardList.astro';
 ---
 
 <section class="text-center py-[70px] px-[60px] flex flex-col items-center">
   <p class="sectionTitle">BEST SELLERS</p>
-  <h2 class="title w-1/4 mt-[20px]">Our featured beauty treatment</h2>
-  <ul class="flex mt-[40px] flex-wrap justify-between">
-    {
-      bestSellersList.map(({ title, description, price, image }) => (
-        <BestSellersCardItem
-          title={title}
-          description={description}
-          price={price}
-        />
-      ))
-    }
-  </ul>
+  <h2 class="title mt-[20px]">Our featured beauty <br /> treatment</h2>
+  <BestSellersCardList />
 </section>
