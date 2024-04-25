@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import logo from "../images/logo.png"
+import { PHONE_NUMBER } from '../constants';
 ---
 
 <footer
@@ -14,8 +15,8 @@ class="flex bg-pinkLight p-16 justify-between items-center"
   <address class="flex flex-col mt-[15px]">
     <a
       class="hover:text-accent"
-      href="tel:333333333"
-      aria-label="phone number">+48 333 333 333</a
+      href=`tel:${PHONE_NUMBER}`
+      aria-label="phone number">{PHONE_NUMBER}</a
     >
     <a
       class="hover:text-accent"
