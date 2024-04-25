@@ -34,11 +34,6 @@ export default {
           borderRadius: '10px',
           padding: '15px 25px',
         },
-        '.navActive': {
-          background: theme('colors.pink'),
-          borderRadius: '30px',
-          transition: '300'
-        }
       };
       addComponents(components);
       addBase({
@@ -51,5 +46,6 @@ export default {
         },
       });
     }),
+    require('tailwind-hamburgers')
   ],
 };
