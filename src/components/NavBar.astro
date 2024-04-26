@@ -3,27 +3,27 @@ import { Image } from 'astro:assets';
 import logo from '../images/logo.png';
 ---
 
-<div class="max-lg:hidden sticky top-0 z-10">
-  <nav class="flex justify-between  relative items-center bg-white rounded-b-2xl p-5 ">
+<div class="max-mobile:hidden sticky top-0 z-10">
+  <nav class="flex justify-between  relative items-center border-gray bg-white rounded-b-2xl p-5">
     <ul class="p-0 flex text-[#3e2c26]">
-      <li class=" hover:text-pink transition-colors duration-300 p-2">
+      <li class=" hover:text-pink transition-colors duration-200 p-2">
         <a href="/">Strona główna</a>
       </li>
-      <li class="ml-[25px] p-2 hover:text-pink transition-colors duration-300 aboutUs">
+      <li class="ml-[25px] p-2 hover:text-pink transition-colors duration-200 aboutUs">
         <a href="#aboutUs">O nas</a>
       </li>
-      <li class="ml-[25px] p-2 hover:text-pink transition-colors duration-300 services">
+      <li class="ml-[25px] p-2 hover:text-pink transition-colors duration-200 services">
         <a href="#services">Usługi</a>
       </li>
-      <li class="ml-[25px] p-2 hover:text-pink transition-colors duration-300 bestSellers">
+      <li class="ml-[25px] p-2 hover:text-pink transition-colors duration-200 bestSellers">
         <a href="#bestSellers">Cennik</a>
       </li>
     </ul>
     <ul class="p-0 flex">
-      <li class=" hover:text-pink transition-colors duration-300 p-2">
+      <li class=" hover:text-pink transition-colors duration-200 p-2">
         <a href="/">Testimanial</a>
       </li>
-      <li class="ml-[25px]  hover:text-pink transition-colors duration-300 p-2">
+      <li class="ml-[25px]  hover:text-pink transition-colors duration-200 p-2">
         <a href="/">Kontakt</a>
       </li>
     </ul>
@@ -32,13 +32,13 @@ import logo from '../images/logo.png';
 
 <a href="/">
   <Image
-      class="absolute left-1/2 -translate-x-1/2 top-0 z-10 w-[200px] max-lg:hidden"
+      class="absolute left-1/2 -translate-x-1/2 top-0 z-10 w-[200px] max-mobile:hidden"
       src={logo}
       alt="logo"
   />
 </a>
 
-<div class="lg:hidden sticky top-4 float-right right-0 z-10 relative inline-block p-2">
+<div class="mobile:hidden sticky top-4 float-right right-0 z-10 relative inline-block p-2">
   <div class="tham tham-e-squeeze tham-w-9">
     <div class="tham-box">
       <div class="tham-inner">
@@ -46,11 +46,11 @@ import logo from '../images/logo.png';
     </div>
   </div>
   <div class="" id="links"> 
-    <ul id="hamMenu" class="bg-white hidden absolute mt-2 w-40 right-4">
-      <li class="p-4 hover:text-pink transition-colors duration-300 bestSellers"><a href="/">Strona główna</a></li>
-      <li class="p-4 hover:text-pink transition-colors duration-300 bestSellers"><a href="#aboutUs">O nas</a></li>
-      <li class="p-4 hover:text-pink transition-colors duration-300 bestSellers"><a href="#services">Usługi</a></li>
-      <li class="p-4 hover:text-pink transition-colors duration-300 bestSellers"><a href="#bestSellers">Cennik</a></li>
+    <ul id="hamMenu" class="bg-white border-2 border-gray hidden absolute mt-2 w-40 right-4">
+      <li class="p-4 hover:text-pink transition-colors duration-200 bestSellers"><a href="/">Strona główna</a></li>
+      <li class="p-4 hover:text-pink transition-colors duration-200 bestSellers"><a href="#aboutUs">O nas</a></li>
+      <li class="p-4 hover:text-pink transition-colors duration-200 bestSellers"><a href="#services">Usługi</a></li>
+      <li class="p-4 hover:text-pink transition-colors duration-200 bestSellers"><a href="#bestSellers">Cennik</a></li>
     </ul>
   </div>
 </div>
@@ -59,6 +59,8 @@ import logo from '../images/logo.png';
 <script>
   const sections = document.querySelectorAll("section");
   const navLi = document.querySelectorAll("nav ul li");
+  const nav = document.querySelector("nav");
+  const scrollThreshold = 50;
 
   window.onscroll = () => {
     var current = "";
@@ -76,6 +78,13 @@ import logo from '../images/logo.png';
         li.classList.add("text-pink");
       }
     })
+
+    if(scrollY > scrollThreshold && !nav.classList.contains("border-2")) {
+      console.log("siema");
+      nav.classList.add("border-2");
+    } else if(scrollY <= scrollThreshold && nav.classList.contains("border-2")) {
+      nav.classList.remove("border-2");
+    }
   }
 
 const tham = document.querySelector(".tham");

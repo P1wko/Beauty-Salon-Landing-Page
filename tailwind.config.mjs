@@ -16,6 +16,9 @@ export default {
         swatch_8: '#c0956b',
       },
     },
+    screens: {
+      'mobile': '1080px',
+    }
   },
   plugins: [
     plugin(function ({ addComponents, theme, addBase }) {
