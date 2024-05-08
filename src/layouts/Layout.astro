@@ -6,7 +6,7 @@ import Services from '../components/Services.astro';
 import BestSellers from '../components/BestSellers.astro';
 import logo from '../images/logo.png';
 import { Image } from 'astro:assets';
-// import Appoinment from '../components/Appoinment.astro';
+import Appoinment from '../components/Appoinment.astro';
 
 interface Props {
   title: string;
@@ -27,17 +27,18 @@ const { title } = Astro.props;
   </head>
   <body>
     <header class="px-[100px] mx-auto pt-[45px]">
-      <NavBar />
-      <Hero />
+      
     </header>
     <main class="px-[60px] mx-auto">
+      <NavBar />
+      <Hero />
       <AboutUs />
       <Services />
       <section class="banner"></section>
       <BestSellers />
       <section class="ourExperts"></section>
       <section class="testinaial"></section>
-      <!-- <Appoinment /> -->
+      <Appoinment />
       <section class="newsFeed"></section>
       <footer
         class="flex bg-pinkLight pt-[60px] pb-[45px] px-[60px] justify-between items-center"
