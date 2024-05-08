@@ -1,25 +1,7 @@
 ---
-import { Image } from 'astro:assets';
-import logo from '../images/logo.png';
-import {PHONE_NUMBER} from '../constants'
+import Layout from '../layouts/Layout.astro';
 ---
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Strona w budowie!</title>
-  </head>
-  <body>
-    <main class="w-full flex flex-col items-center justify-center h-screen bg-pinkLight text-center">
-      <Image src={logo} alt="logo" loading="eager" width="250" />
-      <h1 class=" text-2xl mb-3 font-medium">Strona w budowie!</h1>
-      <p class="text-base px-5">Zapraszamy do rezerwacji pod numerem telefonu:
-        <a href=`tel:${PHONE_NUMBER}` class="text-pink hover:text-accent transition-colors" aria-label="phone number" >{PHONE_NUMBER}</a>.
-      </p>
-    </main>
-  </body>
-</html>
+
+<Layout title="Spa & Beauty Salon Landing Page">
+  <main></main>
+</Layout>
