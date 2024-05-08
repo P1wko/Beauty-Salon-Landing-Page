@@ -44,7 +44,6 @@ export default {
           scrollBehavior: 'smooth',
         },
         body: {
-          maxWidth: '1440px',
           lineHeight: '1.4',
         },
       });

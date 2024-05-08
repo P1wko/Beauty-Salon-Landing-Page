@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../images/logo.png';
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Astro description" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Strona w budowie!</title>
+    </head>
+    <body>
+        <main class="w-full flex flex-row-reverse items-center justify-center h-screen bg-pinkLight text-center [@media(max-width:768px)]:flex-col">
+            <Image src={logo} alt="logo" loading="eager" width="250" />
+            <section class="flex flex-col gap-4 justify-center max-w-[360px] text-start px-4">
+                <h1 class="text-4xl font-bold">Błąd 404</h1>
+                <p class="text-base">
+                    Oops! Wygląda na to, że nasza usługa piękności jest w chwilowej niedyspozycji.
+                    Wróć do nas wkrótce lub skorzystaj z innych fantastycznych opcji, które mamy do zaoferowania.
+                    Przepraszamy za kłopoty!
+                </p>
+                <a href="/" class="accentButton px-4 py-2 text-center" aria-label="Link to main page">Strona główna</a>
+            </section>
+        </main>
+    </body>
+</html>
