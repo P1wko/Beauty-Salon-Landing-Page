@@ -3,96 +3,119 @@ import { Image } from 'astro:assets';
 import logo from '../images/logo.png';
 ---
 
-<div class="max-mobile:hidden sticky top-0 z-10">
-  <nav class="flex justify-between  relative items-center border-gray border-t-0 bg-white rounded-b-2xl p-5">
-    <ul class="p-0 flex text-[#3e2c26]">
-      <li class=" hover:text-pink transition-colors duration-200 p-2">
-        <a href="#">Strona główna</a>
-      </li>
-      <li class="ml-[25px] p-2 hover:text-pink transition-colors duration-200 aboutUs">
-        <a href="#aboutUs">O nas</a>
-      </li>
-      <li class="ml-[25px] p-2 hover:text-pink transition-colors duration-200 services">
-        <a href="#services">Usługi</a>
-      </li>
-      <li class="ml-[25px] p-2 hover:text-pink transition-colors duration-200 prices">
-        <a href="#prices">Cennik</a>
-      </li>
-    </ul>
-    <ul class="p-0 flex">
-      <li class="ml-[25px]  hover:text-pink transition-colors duration-200 p-2">
-        <a href="/">Kontakt</a>
-      </li>
-    </ul>
-  </nav>
+<div class='max-mobile:hidden sticky top-0 z-10'>
+	<nav
+		class='flex justify-between relative items-center border-gray border-t-0 bg-white rounded-b-2xl p-5'
+	>
+		<ul class='p-0 flex text-[#3e2c26]'>
+			<li class='hover:text-pink transition-colors duration-200 p-2'>
+				<a href='#'>Strona główna</a>
+			</li>
+			<li
+				class='ml-[25px] p-2 hover:text-pink transition-colors duration-200 aboutUs'
+			>
+				<a href='#aboutUs'>O nas</a>
+			</li>
+			<li
+				class='ml-[25px] p-2 hover:text-pink transition-colors duration-200 services'
+			>
+				<a href='#services'>Usługi</a>
+			</li>
+			<li
+				class='ml-[25px] p-2 hover:text-pink transition-colors duration-200 prices'
+			>
+				<a href='#prices'>Cennik</a>
+			</li>
+		</ul>
+		<ul class='p-0 flex'>
+			<li class='ml-[25px] hover:text-pink transition-colors duration-200 p-2'>
+				<a href='/'>Kontakt</a>
+			</li>
+		</ul>
+	</nav>
 </div>
 
-<a href="/">
-  <Image
-    class="absolute left-1/2 -translate-x-1/2 top-0 z-10 w-[200px] max-mobile:hidden"
-    src={logo}
-    alt="logo"
-  />
+<a href='/'>
+	<Image
+		class='absolute left-1/2 -translate-x-1/2 top-0 z-10 w-[200px] max-mobile:hidden'
+		src={logo}
+		alt='logo'
+	/>
 </a>
 
-<div class="mobile:hidden sticky top-4 float-right right-0 z-10 relative inline-block p-2">
-  <div class="tham tham-e-squeeze tham-w-9">
-    <div class="tham-box">
-      <div class="tham-inner">
-      </div>
-    </div>
-  </div>
-  <div class="" id="links"> 
-    <ul id="hamMenu" class="bg-white border-2 border-gray hidden absolute mt-2 w-40 right-4">
-      <li class="hover:text-pink transition-colors duration-200 prices"><a class="p-4 block" href="#">Strona główna</a></li>
-      <li class="hover:text-pink transition-colors duration-200 prices"><a class="p-4 block" href="#aboutUs">O nas</a></li>
-      <li class="hover:text-pink transition-colors duration-200 prices"><a class="p-4 block" href="#services">Usługi</a></li>
-      <li class="hover:text-pink transition-colors duration-200 prices"><a class="p-4 block" href="#prices">Cennik</a></li>
-    </ul>
-  </div>
+<div class='mobile:hidden fixed top-8 right-8 z-20'>
+	<div class='tham tham-e-squeeze tham-w-9'>
+		<div class='tham-box'>
+			<div class='tham-inner'></div>
+		</div>
+	</div>
+</div>
+<div
+	id='mobile-menu'
+	class='mobile:hidden fixed w-screen h-screen top-0 left-0 flex flex-col justify-center items-center bg-accent z-10 transition-transform -translate-y-full'
+>
+	<a href='/'>
+		<Image class='w-[200px]' src={logo} alt='logo' />
+	</a>
+	<ul class='w-screen h-screen flex flex-col items-center'>
+		<li class='hover:text-pink transition-colors duration-200 prices'>
+			<a class='p-4 block' href='#'>Strona główna</a>
+		</li>
+		<li class='hover:text-pink transition-colors duration-200 prices'>
+			<a class='p-4 block' href='#aboutUs'>O nas</a>
+		</li>
+		<li class='hover:text-pink transition-colors duration-200 prices'>
+			<a class='p-4 block' href='#services'>Usługi</a>
+		</li>
+		<li class='hover:text-pink transition-colors duration-200 prices'>
+			<a class='p-4 block' href='#prices'>Cennik</a>
+		</li>
+	</ul>
 </div>
 
 
 <script>
-  const sections = document.querySelectorAll("section");
-  const navLi = document.querySelectorAll("nav ul li");
-  const nav = document.querySelector("nav");
-  const scrollThreshold = 50;
+	const sections = document.querySelectorAll('section');
+	const navLi = document.querySelectorAll('nav ul li');
+	const nav = document.querySelector('nav');
+	const scrollThreshold = 50;
 
-  window.onscroll = () => {
-    var current = "";
-    
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      if (scrollY >= sectionTop - 180) {
-        current = section.getAttribute("id");
-      }
-    })
-    
-    navLi.forEach((li) => {
-      li.classList.remove("text-pink");
-      if (li.classList.contains(current)) {
-        li.classList.add("text-pink");
-      }
-    })
+	window.onscroll = () => {
+		var current = '';
 
-    if(scrollY > scrollThreshold && !nav.classList.contains("border-2")) {
-      nav.classList.add("border-2");
-    } else if(scrollY <= scrollThreshold && nav.classList.contains("border-2")) {
-      nav.classList.remove("border-2");
-    }
-  }
+		sections.forEach((section) => {
+			const sectionTop = section.offsetTop;
+			if (scrollY >= sectionTop - 180) {
+				current = section.getAttribute('id');
+			}
+		});
 
-const tham = document.querySelector(".tham");
-const ul = document.getElementById("hamMenu");
-  
-tham.addEventListener('click', () => {
-tham.classList.toggle('tham-active');
-if(ul.classList.contains("hidden")) {
-  ul.classList.remove("hidden");
-} else {
-  ul.classList.add("hidden");
-}
+		navLi.forEach((li) => {
+			li.classList.remove('text-pink');
+			if (li.classList.contains(current)) {
+				li.classList.add('text-pink');
+			}
+		});
 
-});
+		if (scrollY > scrollThreshold && !nav.classList.contains('border-2')) {
+			nav.classList.add('border-2');
+		} else if (
+			scrollY <= scrollThreshold &&
+			nav.classList.contains('border-2')
+		) {
+			nav.classList.remove('border-2');
+		}
+	};
+
+	const hamburger = document.querySelector('.tham');
+	const mobileMenu = document.getElementById('mobile-menu');
+
+	hamburger.addEventListener('click', () => {
+		hamburger.classList.toggle('tham-active');
+		if (mobileMenu.classList.contains('-translate-y-full')) {
+			mobileMenu.classList.remove('-translate-y-full');
+		} else {
+			mobileMenu.classList.add('-translate-y-full');
+		}
+	});
 </script>
