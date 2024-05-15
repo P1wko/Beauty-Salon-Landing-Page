@@ -52,22 +52,22 @@ import logo from '../images/logo.png';
 </div>
 <nav
 	id='mobile-menu'
-	class='mobile:hidden fixed w-screen h-screen top-0 left-0 flex flex-col justify-center items-center bg-accent z-10 transition-transform -translate-y-full duration-300'
+	class='mobile:hidden fixed w-screen h-screen top-0 left-0 flex flex-col justify-center items-center bg-white z-10 transition-transform -translate-y-full duration-300'
 >
 	<a href='/'>
 		<Image id='mobile-logo' class='w-[200px]' src={logo} alt='logo' />
 	</a>
-	<ul class='w-screen h-screen flex flex-col items-center text-white text-lg'>
-		<li class='hover:text-dark transition-colors duration-200 mobile-link'>
+	<ul class='w-screen h-screen flex flex-col items-center text-dark text-lg'>
+		<li class='hover:text-accent transition-colors duration-200 mobile-link'>
 			<a class='p-4 block' href='#'>Strona główna</a>
 		</li>
-		<li class='hover:text-dark transition-colors duration-200 mobile-link'>
+		<li class='hover:text-accent transition-colors duration-200 mobile-link'>
 			<a class='p-4 block' href='#aboutUs'>O nas</a>
 		</li>
-		<li class='hover:text-dark transition-colors duration-200 mobile-link'>
+		<li class='hover:text-accent transition-colors duration-200 mobile-link'>
 			<a class='p-4 block' href='#services'>Usługi</a>
 		</li>
-		<li class='hover:text-dark transition-colors duration-200 mobile-link'>
+		<li class='hover:text-accent transition-colors duration-200 mobile-link'>
 			<a class='p-4 block' href='#prices'>Cennik</a>
 		</li>
 	</ul>
