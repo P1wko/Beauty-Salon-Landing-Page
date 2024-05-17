@@ -1,51 +1,57 @@
 ---
 import ServiceCardItem from './ServiceCardItem.astro';
+import Eyelashes from "../icons/Eyelashes.png"
+import Nail from "../icons/Nail.png"
+import Eyebrow from "../icons/Eyebrow.png"
+import Body from "../icons/Body.png"
+import Face from "../icons/Face.png"
+import Foot from "../icons/Foot.png"
 const servicesList = [
   {
-    title: 'HAIR TREATMENT',
+    icon: Eyelashes,
     description:
-      ' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, hic blanditiis. Voluptates',
+      'Podkreśl swoje spojrzenie naszymi usługami związanymi z rzęsami. Oferujemy profesjonalne zabiegi przedłużania, zagęszczania i laminacji, które dodadzą Twoim oczom wyjątkowy urok.',
   },
   {
-    title: 'MAKU-UP',
+    icon: Nail,
     description:
-      ' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, hic blanditiis. Voluptates',
+      'Zapewnij swoim dłoniom relaks i profesjonalną pielęgnację dzięki usługom manicure oferowanym w salonie. wykwalifikowane podejście obejmuje szeroki zakres zabiegów, od klasycznego manicure po bardziej zaawansowane techniki, takie jak hybrydowy, żelowy czy akrylowy manicure.',
   },
   {
-    title: 'MENI/PEDI SERVICES',
+    icon: Eyebrow,
     description:
-      ' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, hic blanditiis. Voluptates',
+      'Zapewnij swoim brwiom najwyższy poziom pielęgnacji i stylizacji dzięki usługom oferowanym w salonie. Moje doświadczenie pozwoli Ci osiągnąć idealny kształt i kolor brwi, dopasowany do Twojego indywidualnego stylu i preferencji.',
   },
   {
-    title: 'PARTY/WEDDING EVENT',
+    icon: Body,
     description:
-      ' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, hic blanditiis. Voluptates',
+      'Odkryj nowy wymiar pielęgnacji ciała w moim kameralnym salonie piękności, gdzie skupiam się na zindywidualizowanych zabiegach. Dostarczam profesjonalnych usług, które sprawią, że Twoje ciało będzie promienieć zdrowiem i urodą, zapewniając kompleksową odnowę i relaks.',
   },
   {
-    title: 'COSMETIC SERVICES',
+    icon: Face,
     description:
-      ' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, hic blanditiis. Voluptates',
+      'Zapewniam kompleksowe zabiegi pielęgnacyjne dla Twojej twarzy, które odżywią i odświeżą Twoją skórę. Dzięki indywidualnemu podejściu i profesjonalnemu doświadczeniu, gwarantuję efektywną pielęgnację, która sprawi, że poczujesz się pięknie i pewnie siebie.',
   },
   {
-    title: 'MASSAGE SERVICES',
+    icon: Foot,
     description:
-      ' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, hic blanditiis. Voluptates',
+      'Zanurz swoje stopy w luksusie naszych zindywidualizowanych zabiegów. Oferuję profesjonalne usługi, które odświeżą, zrelaksują i odprężą Twoje stopy, sprawiając, że będą promienieć zdrowiem i urodą.',
   },
 ];
 ---
 
 <section
   id="services"
-  class="text-center flex flex-col items-center bg-pinkLight py-[70px] px-[60px]"
+  class="text-center flex flex-col items-center bg-pinkLight py-[70px] px-[60px] scroll-mt-10"
 >
-  <p class="sectionTitle">SERVICES</p>
-  <h2 class="title w-1/3 mt-[20px]">
-    We experienced in making you more beautiful
+  <p class="sectionTitle text-2xl">Usługi</p>
+  <h2 class="title w-1/3 mt-[20px] max-[1280px]:w-[80%]">
+    Nasz talent pozwoli Ci odkryć swoje naturalne piękno.
   </h2>
   <ul class="flex flex-wrap gap-4 justify-center mt-[50px]">
     {
-      servicesList.map(({ title, description }) => (
-        <ServiceCardItem title={title} description={description} />
+      servicesList.map(({ icon, description }) => (
+        <ServiceCardItem icon={icon} description={description} />
       ))
     }
   </ul>
