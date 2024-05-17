@@ -1,35 +1,25 @@
 ---
 import { Image } from 'astro:assets';
-import relax from '../images/relax.webp';
-import eyelashExtension from '../images/eyelashExtension.webp';
-import lips from '../images/lips.webp';
+import mask from "../images/mask.png"
+import nails from '../images/nails.png';
+import eyelashes from '../images/eyelashes.png';
 ---
 
-<section class="flex gap-10 my-[100px] scroll-mt-28" id="aboutUs">
-  <div class="relative w-1/2 flex justify-center items-center">
-    <Image class="h-2/3 w-2/3 rounded-lg" src={relax} alt="relax image" />
-    <Image
-      class="w-[150px] h-[150px] bg-cover rounded-lg absolute bottom-0 right-0"
-      src={lips}
-      alt="lips image"
-    />
-    <Image
-      class="w-[150px] h-[150px] bg-cover rounded-lg absolute left-0 top-0"
-      src={eyelashExtension}
-      alt="eyelashExtension image"
-    />
+<section class="flex gap-8 mx-10 h-screen items-center justify-center" id="aboutUs">
+  <div class="relative hidden justify-center items-center w-1/2 min-[1024px]:flex">
+    <Image loading="eager" class="rounded-lg aspect-square w-1/2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-1" src={mask} alt="face mask" />
+    <Image loading="eager" class="rounded-lg aspect-square w-1/4 absolute z-2 top-[calc(50%+75px)] left-[calc(50%+75px)]" src={nails} alt="painting nails" />
+    <Image loading="eager" class="rounded-lg aspect-square w-1/4 absolute z-2 bottom-[calc(50%+75px)] right-[calc(50%+75px)]" src={eyelashes} alt="eyelash extension" />
   </div>
-  <div class="w-1/2 pr-[30px]">
-    <p class="sectionTitle">ABOUT US</p>
-    <h2 class="title mt-[10px]">
-      Beauty is about being <br />comfortable in your<br /> own skin
+  <div class="flex flex-col gap-6 w-3/4 lg:w-1/2">
+    <p class="text-accent text-2xl">O nas</p>
+    <h2 class="font-medium text-5xl">
+      Prawdziwe piękno to poczucie komfortu we własnej skórze
     </h2>
-    <p class="mt-[10px]">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione quia eos
-      similique tenetur, exercitationem earum asperiores eligendi eum, mollitia
-      debitis saepe provident cum neque voluptatem corporis, obcaecati quibusdam
-      quo magnam?
+    <p class="text-xl">
+      Wierzę, że prawdziwe piękno wyraża się nie tylko w zewnętrznym wyglądzie, ale także wewnętrznym komforcie i pewności siebie.
+      Filozofia salonu opiera się na holistycznym podejściu do pielęgnacji, które nie tylko poprawia kondycję skóry, ale także wzmacnia poczucie pewności siebie moich klientów.
     </p>
-    <button class="accentButton mt-[35px]">Learn More</button>
+    <button class="accentButton self-start py-3 text-xl mt-4">Dowiedz się więcej</button>
   </div>
 </section>
