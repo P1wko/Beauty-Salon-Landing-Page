@@ -17,8 +17,9 @@ export default {
 			},
 		},
 		screens: {
-			"mobile": "1080px",
-		}
+			mobile: '1080px',
+			sm: '640px',
+		},
 	},
 	plugins: [
 		plugin(function ({ addComponents, theme, addBase }) {
@@ -48,6 +49,6 @@ export default {
 				},
 			});
 		}),
-		require("tailwind-hamburgers")
+		require('tailwind-hamburgers'),
 	],
 };
