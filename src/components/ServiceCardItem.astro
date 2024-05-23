@@ -1,16 +1,16 @@
 ---
+import { Image } from "astro:assets";
 interface Props {
-  title: string;
+  icon: ImageMetadata;
   description: string;
 }
-const { title, description } = Astro.props;
+const { icon, description } = Astro.props;
 ---
 
 <li
-  class="w-[32%] flex flex-col items-center bg-white shadow-xl px-[20px] py-[40px]"
+  class="w-[20%] flex flex-col items-center bg-white shadow-xl px-[20px] py-[40px] mx-10 my-4 rounded-[22px] max-[1280px]:w-[80%]"
 >
-  <div class="w-[45px] h-[45px] bg-accent"></div>
-  <h3 class="font-bold mt-[15px]">{title}</h3>
+  <div class="w-[45px] h-[45px] "> <Image loading="eager" src={icon} alt="ikona"/> </div>
   <p class="font-light mt-[15px]">
     {description}
   </p>
