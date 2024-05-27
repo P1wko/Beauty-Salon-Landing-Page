@@ -1,23 +1,55 @@
-<div class="flex justify-between items-center mt-[100px]">
-  <div class="w-1/3">
-    <p class="sectionTitle">SPA & BEAUTY SALON</p>
-    <h1 class="title">Make Your Skin<br /> Shine & Glowing</h1>
-    <p class="text-gray">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum debitis
-      blanditiis.
+---
+import { Image } from 'astro:assets';
+import heroWoman from '../images/hero-bg.png';
+import { PHONE_NUMBER } from '../constants';
+---
+
+<section class="flex gap-10 items-center justify-between h-screen mt-10 px-10 bg-pinkLight">
+  <div class="flex flex-1 flex-col gap-6 relative min-w-[300px] z-[1]">
+    <p class="text-2xl text-accent">SPA & Pielęgnacja</p>
+    <h1 class="text-2xl sm:text-5xl font-semibold">
+      Nadaj swojej skórze<br>blasku i zdrowego wyglądu.
+    </h1>
+    <p class="sm:text-xl text-base">
+      Osiągnij promienną i zdrowo wyglądającą skórę dzięki sprawdzonym metodom pielęgnacji.
+      Pozwól swojej naturalnej urodzie zabłysnąć, czując się pewniej i piękniej każdego dnia!
     </p>
-    <button class="mt-[30px] accentButton">Book Now</button>
+    <button id="reserveButton" class="accentButton self-start mt-4 py-3 text-xl" aria-label="Zarezerwuj wizytę">
+      Zarezerwuj wizytę
+    </button>
   </div>
-  <div
-    class="text-center border-[2px] px-[25px] py-[35px] border-accent rounded-tl-[20px] rounded-br-[20px]"
-  >
-    <h2 class="text-lg">Opening Hour</h2>
-    <ul class="mt-[15px]">
-      <li>Mon-Fri: <span class="font-bold">9 AM- 6 PM</span></li>
-      <li>Saturday: <span class="font-bold">9 AM- 4 PM</span></li>
-      <li>Sunday: <span class="font-bold">Closed</span></li>
-      <li></li>
-      <li></li>
-    </ul>
+  <div class="flex h-full z-[1]">
+    <div class="self-end">
+      <Image class="mobile:block hidden" src={heroWoman} alt="Background woman" />
+    </div>
+    <div class="text-center border-4 rounded-xl border-accent self-center p-6 min-w-fit">
+      <h2 class="text-lg">Jesteśmy otwarci:</h2>
+      <ul class="mt-2 flex flex-col gap-2">
+        <li>Pon-pt: <span class="font-bold">9:00 - 18:00</span></li>
+        <li>Sobota: <span class="font-bold">9:00 - 16:00</span></li>
+        <li>Niedziela: <span class="font-bold">Zamknięte</span></li>
+        <li id="phoneNumber">tel: <span class="font-bold">+48 {PHONE_NUMBER}</span></li>
+      </ul>
+    </div>
   </div>
-</div>
+</section>
+
+<script>
+import { PHONE_NUMBER } from "../constants";
+
+  const temporaryPhoneAnimation = ['scale-125'];
+  const phoneNumberElement = document.getElementById('phoneNumber');
+
+  const handleButtonClick = () => {
+    if (window.matchMedia('(max-width: 768px)').matches) {
+      window.location.href = `tel:${PHONE_NUMBER}`;
+    } else {
+      phoneNumberElement.classList.add(...temporaryPhoneAnimation);
+      setTimeout(() => {
+        phoneNumberElement.classList.remove(...temporaryPhoneAnimation);
+      }, 500);
+    }
+  };
+
+  document.getElementById('reserveButton').addEventListener('click', handleButtonClick);
+</script>
