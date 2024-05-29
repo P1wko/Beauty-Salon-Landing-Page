@@ -19,7 +19,7 @@ export default {
     screens: {
       desktop: '1024px',
       tablet: '768px',
-      mobile: '360px',
+      mobile: '480px',
     },
   },
   plugins: [
