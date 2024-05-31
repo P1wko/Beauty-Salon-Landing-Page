@@ -1,39 +1,88 @@
 ---
 import { Image } from 'astro:assets';
-import heirRebonding from '../images/heirRebonding.webp';
-import hurbalSkincare from '../images/hurbalSkincare.webp';
-import eyelashExtension from '../images/eyelashExtension.webp';
+
+
 const bestSellersList = [
-  {
-    image: heirRebonding,
-    title: 'Heir Rebonding',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
-    price: '250',
+  { category: 'Zabiegi na twarz:',
+  services: [
+    {title: 'Makijaż okazjonalny', price: '150zł'},
+    {title: 'Oczyszczanie wodorowe w terapiach łączonych:', price: '180zł'},
+    {title: 'Mezoterapia mikroigłowa z ampułką:', price: '180zł'},
+    {title: 'Mezoterapia mikroigłowa z falą radiową:', price: '300zł'},
+    {title: 'Fala radiowa na twarz:', price: '180zł'},
+    {title: 'Fala radiowa całość (twarz, szyja, dekolt):', price: '220zł'},
+    //akapit
+    {title: 'Zabiegi pielęgnacyjne nawilżające, ujędrniające, przeciwzmarszczkowe, rozświetlające, wzmacniające naczynka (peeling + masaż twarzy + maska):', price: '150zł'},
+    //akapit
+    {title: 'Peelingi kawitacyjne z ampułką i maską:', price: '170zł'},
+    {title: 'Kwasy i maska:', price: '100zł'},
+  ],
+    
   },
-  {
-    image: hurbalSkincare,
-    title: 'Hurbal Skincare',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
-    price: '350',
+
+  {category: 'Zabiegi na ciało',
+    services: [
+      {title: 'Liposukcja ultradźwiękowa (strefa):', price: '150zł'},
+    ],
   },
-  {
-    image: eyelashExtension,
-    title: 'Eyelash Extension',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
-    price: '299',
+
+  {category: 'Brwi oraz rzęsy',
+  services: [
+    {title: 'Regulacja brwi:', price: '20zł'},
+    {title: 'Henna pudrowa z regulacją:', price: '80zł'},
+    {title: 'Henna rzęs:', price: '40zł'},
+    {title: 'Laminacja brwi:', price: '120zł'},
+    {title: 'Laminacja rzęs:', price: '130zł'},
+  ],
+
   },
+
+  {category: 'Rzęsy',
+    services: [
+      {title: '1:1', price: '110-130zł'},
+      {title: '2D', price: '120-140zł'},
+      {title: '3D', price: '130-150zł'},
+      {title: '4D', price: '140-160zł'},
+      {title: '5D', price: '150-170zł'},
+      {title: '6D', price: '160-180zł'},
+    ],
+  },
+
+  {category: 'Wosk', 
+  services: [
+    {title: 'Górna warga:', price: '20zł'},
+    {title: 'Twarz:', price: '50zł'},
+    {title: 'Pachy:', price: '60zł'},
+    {title: 'Ręce:', price: '60zł'},
+  ],},
+
+  {category:'',
+    services:[
+      {title: 'Manicure klasyczny:', price: '50zł'},
+      {title: 'Manicure hybrydowy:', price: '60zł'},
+      {title: 'Manicure żelowy z przedłużeniem:', price: '90zł'},
+      {title: 'Zabieg pielęgnacyjny na dłonie:', price: '60zł'},
+      {title: 'Zabieg pielęgnacyjny na stopy:', price: '60zł'},
+    ],
+},
+
 ];
 ---
 
 <ul class="flex mt-[40px] flex-wrap justify-between">
   {
-    bestSellersList.map(({ title, description, price, image }) => (
-      <li class="w-[32%] cursor-pointer rounded-b-lg  shadow-lg hover:shadow-2xl">
-        <Image class="rounded-t-lg h-[250px]" src={image} alt="image" />
+    bestSellersList.map(({ category, services }, index) => (
+      <li class={`w-1/3 md:w-1/3 mb-6 ${index % 3 !== 0 ? 'md:pl-4' : ''}`}>
+        
         <div class="border border-pinkLight  border-t-0 px-[20px]  pb-[20px]">
-          <h3 class="font-bold mt-[15px]">{title}</h3>
-          <p class="mt-[10px] font-light">{description}</p>
-          <p class="sectionTitle mt-[20px]">$ {price}</p>
+          <h3 class="font-bold mt-[15px]">{category}</h3>
+{services.map(({title, price}) => (
+  <div class="flex justify-between items-center mb-2">
+    <h3 class="font-semibold">{title}</h3>
+    <p class="font-semibold">{price}</p>
+  </div>))
+}
+
         </div>
       </li>
     ))
