@@ -3,9 +3,10 @@ import { Image } from 'astro:assets';
 
 
 const bestSellersList1 = [
+{title: 'Makijaż okazjonalny', price: '150zł'},
   { title: 'Zabiegi na twarz:', price: ''},
 
-    {title: 'Makijaż okazjonalny', price: '150zł'},
+    
     {title: 'Oczyszczanie wodorowe w terapiach łączonych:', price: '180zł'},
     {title: 'Mezoterapia mikroigłowa z ampułką:', price: '180zł'},
     {title: 'Mezoterapia mikroigłowa z falą radiową:', price: '300zł'},
@@ -57,38 +58,38 @@ const bestSellersList1 = [
 ---
 
 <ul class="flex mt-[40px] flex-wrap justify-between">
-  <li class="w-[32%] cursor-pointer rounded-lg  shadow-lg hover:shadow-2xl bg-white">
+  <li class="cursor-pointer rounded-lg shadow-lg hover:shadow-2xl bg-white w-full mobile:w-full tablet:w-[48%] desktop:w-[32%]">
     <ul>
     {bestSellersList1.map(({ title, price}) => (
       
 
         <div class="flex justify-between px-[20px]  pb-[20px]">
-          <h3 class="font-bold mt-[15px] text-left">{title}</h3>
+          <h3 class="text-base mt-[15px] text-left">{title}</h3>
           <p class="font-bold mt-[20px] text-right">{price}</p>
         </div>
     ))
   }
 </ul></li>
-<li class="w-[32%] cursor-pointer rounded-lg  shadow-lg hover:shadow-2xl bg-white">
+<li class="cursor-pointer rounded-lg shadow-lg hover:shadow-2xl bg-white w-full mobile:w-full tablet:w-[48%] desktop:w-[32%]">
   <ul>
   {bestSellersList2.map(({ title, price}) => (
     
 
       <div class="flex justify-between px-[20px]  pb-[20px]">
-        <h3 class="font-bold mt-[15px] text-left">{title}</h3>
+        <h3 class="text-base mt-[15px] text-left">{title}</h3>
         <p class="font-bold mt-[20px] text-right">{price}</p>
       </div>
   ))
 }
 </ul></li>
 
-<li class="w-[32%] cursor-pointer rounded-lg  shadow-lg hover:shadow-2xl bg-white">
+<li class="cursor-pointer rounded-lg shadow-lg hover:shadow-2xl bg-white w-full mobile:w-full tablet:w-[48%] desktop:w-[32%]">
   <ul>
   {bestSellersList3.map(({ title, price}) => (
     
 
       <div class="flex justify-between px-[20px]  pb-[20px]">
-        <h3 class="font-bold mt-[15px] text-left">{title}</h3>
+        <h3 class="text-base mt-[15px] text-left">{title}</h3>
         <p class="font-bold mt-[20px] text-right">{price}</p>
       </div>
   ))

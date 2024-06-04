@@ -17,8 +17,9 @@ export default {
 			},
 		},
 		screens: {
-			mobile: '1080px',
-			sm: '640px',
+			mobile: '480px',
+			tablet: '780px',
+			desktop: '1024px',
 		},
 	},
 	plugins: [
