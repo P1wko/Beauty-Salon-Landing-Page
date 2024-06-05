@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import logo from '../images/logo.png';
 ---
 
-<div class='max-mobile:hidden sticky top-0 z-10'>
+<div class='max-desktop:hidden sticky top-0 z-10'>
 	<nav
 		class='flex justify-between relative items-center border-pink border-t-0 bg-white rounded-b-2xl p-5'
 	>
@@ -29,7 +29,7 @@ import logo from '../images/logo.png';
 		</ul>
 		<a
 			href='/'
-			class='absolute -top-8 left-1/2 -translate-x-1/2 z-10 w-[200px] max-mobile:hidden transition-transform ease-in-out'
+			class='absolute -top-8 left-1/2 -translate-x-1/2 z-10 w-[200px] max-desktop:hidden transition-transform ease-in-out'
 			id='logo'
 		>
 			<Image src={logo} alt='logo' />
@@ -42,7 +42,7 @@ import logo from '../images/logo.png';
 	</nav>
 </div>
 
-<div class='mobile:hidden fixed top-8 right-8 z-20'>
+<div class='desktop:hidden fixed top-8 right-8 z-20'>
 	<div class='tham tham-e-squeeze tham-w-9'>
 		<div class='tham-box'>
 			<div class='tham-inner'></div>
@@ -51,7 +51,7 @@ import logo from '../images/logo.png';
 </div>
 <nav
 	id='mobile-menu'
-	class='mobile:hidden fixed w-full h-full top-0 left-0 flex flex-col justify-center items-center bg-white z-10 transition-transform -translate-y-full duration-300'
+	class='desktop:hidden fixed w-full h-full top-0 left-0 flex flex-col justify-center items-center bg-white z-10 transition-transform -translate-y-full duration-300'
 >
 	<a href='/'>
 		<Image id='mobile-logo' class='w-[200px]' src={logo} alt='logo' />
