@@ -2,37 +2,51 @@
 import { Image } from 'astro:assets';
 
 
+
 const bestSellersList1 = [
 {title: 'Makijaż okazjonalny', price: '150zł'},
-  { title: 'Zabiegi na twarz:', price: ''},
+{title:'', price:''},
 
+  { title: 'Zabiegi na twarz:', price: ''},
+  {title:'', price:''},
+
+  {title: 'Zabiegi dopasowywuję do indywidualnych potrzeb skóry, po jej diagnozie, można je łączyć, zmieniać. Skontaktuj się ze mną, aby uzyskać spersonalizowane porady w sprawie pielęgnacji.', price: ''},
+  {title:'', price:''},
     
     {title: 'Oczyszczanie wodorowe w terapiach łączonych:', price: '180zł'},
     {title: 'Mezoterapia mikroigłowa z ampułką:', price: '180zł'},
     {title: 'Mezoterapia mikroigłowa z falą radiową:', price: '300zł'},
     {title: 'Fala radiowa na twarz:', price: '180zł'},
     {title: 'Fala radiowa całość (twarz, szyja, dekolt):', price: '220zł'},
-    //akapit
+    {title:'', price:''},
+   
     {title: 'Zabiegi pielęgnacyjne nawilżające, ujędrniające, przeciwzmarszczkowe, rozświetlające, wzmacniające naczynka (peeling + masaż twarzy + maska):', price: '150zł'},
-    //akapit
+    {title:'', price:''},
+    
     {title: 'Peelingi kawitacyjne z ampułką i maską:', price: '170zł'},
     {title: 'Kwasy i maska:', price: '100zł'}];
 
 
     const bestSellersList2 = [
   {title: 'Zabiegi na ciało', price: ''},
+  {title:'', price:''},
+
     {title: 'Liposukcja ultradźwiękowa (strefa):', price: '150zł'},
+    {title:'', price:''},
     
   {title: 'Brwi oraz rzęsy', price: ''},
+  {title:'', price:''},
+
     {title: 'Regulacja brwi:', price: '20zł'},
     {title: 'Henna pudrowa z regulacją:', price: '80zł'},
     {title: 'Henna rzęs:', price: '40zł'},
     {title: 'Laminacja brwi:', price: '120zł'},
     {title: 'Laminacja rzęs:', price: '130zł'},
-  
+  {title:'', price:''},
 
   {title: 'Rzęsy', price: ''},
-    
+  {title:'', price:''},
+
       {title: '1:1', price: '110-130zł'},
       {title: '2D', price: '120-140zł'},
       {title: '3D', price: '130-150zł'},
@@ -42,56 +56,65 @@ const bestSellersList1 = [
     
       const bestSellersList3 = [
   {title: 'Wosk', price: ''},
+  {title:'', price:''},
+
     {title: 'Górna warga:', price: '20zł'},
     {title: 'Twarz:', price: '50zł'},
     {title: 'Pachy:', price: '60zł'},
     {title: 'Ręce:', price: '60zł'},
-  
-
   {title:'', price:''},
+
       {title: 'Manicure klasyczny:', price: '50zł'},
       {title: 'Manicure hybrydowy:', price: '60zł'},
       {title: 'Manicure żelowy z przedłużeniem:', price: '90zł'},
       {title: 'Zabieg pielęgnacyjny na dłonie:', price: '60zł'},
       {title: 'Zabieg pielęgnacyjny na stopy:', price: '60zł'},
 ];
+
+const boldTitles = [
+  'Zabiegi na twarz:',
+  'Zabiegi na ciało',
+  'Brwi oraz rzęsy',
+  'Rzęsy',
+  'Wosk',
+];
+
+const pinkText = 'Zabiegi dopasowywuję do indywidualnych potrzeb skóry, po jej diagnozie, można je łączyć, zmieniać. Skontaktuj się ze mną, aby uzyskać spersonalizowane porady w sprawie pielęgnacji.';
 ---
 
 <ul class="flex mt-[40px] flex-wrap justify-between">
-  <li class="cursor-pointer rounded-lg shadow-lg hover:shadow-2xl bg-white w-full mobile:w-full tablet:w-[48%] desktop:w-[32%]">
+  <li class="rounded-lg shadow-lg bg-white w-full mobile:w-full tablet:w-[48%] desktop:w-[32%]">
     <ul>
     {bestSellersList1.map(({ title, price}) => (
-      
-
-        <div class="flex justify-between px-[20px]  pb-[20px]">
-          <h3 class="text-base mt-[15px] text-left">{title}</h3>
-          <p class="font-bold mt-[20px] text-right">{price}</p>
-        </div>
+  
+  <div class="flex justify-between px-[20px] pt-[10px] pb-[10px]">
+          <h3 class={`text-base mb-[1px] text-left ${boldTitles.includes(title) ? 'font-bold' : ''} ${title === pinkText ? 'text-accent' : ''}`}>{title}</h3>
+          <p class="font-bold  text-right">{price}</p>
+  </div>
     ))
   }
 </ul></li>
-<li class="cursor-pointer rounded-lg shadow-lg hover:shadow-2xl bg-white w-full mobile:w-full tablet:w-[48%] desktop:w-[32%]">
+<li class="rounded-lg shadow-lg bg-white w-full mobile:w-full tablet:w-[48%] desktop:w-[32%]">
   <ul>
   {bestSellersList2.map(({ title, price}) => (
     
 
-      <div class="flex justify-between px-[20px]  pb-[20px]">
-        <h3 class="text-base mt-[15px] text-left">{title}</h3>
-        <p class="font-bold mt-[20px] text-right">{price}</p>
-      </div>
+    <div class="flex justify-between px-[20px] pt-[10px] pb-[10px]">
+          <h3 class={`text-base mb-[1px] text-left ${boldTitles.includes(title) ? 'font-bold' : ''} ${title === pinkText ? 'text-accent' : ''}`}>{title}</h3>
+          <p class="font-bold  text-right">{price}</p>
+  </div>
   ))
 }
 </ul></li>
 
-<li class="cursor-pointer rounded-lg shadow-lg hover:shadow-2xl bg-white w-full mobile:w-full tablet:w-[48%] desktop:w-[32%]">
+<li class="rounded-lg shadow-lg bg-white w-full mobile:w-full tablet:w-[48%] desktop:w-[32%]">
   <ul>
   {bestSellersList3.map(({ title, price}) => (
     
-
-      <div class="flex justify-between px-[20px]  pb-[20px]">
-        <h3 class="text-base mt-[15px] text-left">{title}</h3>
-        <p class="font-bold mt-[20px] text-right">{price}</p>
-      </div>
+<div class="flex justify-between px-[20px] pt-[10px] pb-[10px]">
+          <h3 class={`text-base mb-[1px] text-left ${boldTitles.includes(title) ? 'font-bold' : ''} ${title === pinkText ? 'text-accent' : ''}`}>{title}</h3>
+          <p class="font-bold  text-right">{price}</p>
+  </div>
   ))
 }
 </ul></li>
