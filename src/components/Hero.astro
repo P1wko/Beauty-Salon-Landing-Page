@@ -1,10 +1,10 @@
 ---
 import { Image } from 'astro:assets';
 import heroWoman from '../images/hero-bg.png';
-import { PHONE_NUMBER } from '../constants';
+import { PHONE_NUMBER, ADRESS } from '../constants';
 ---
 
-<section class="desktop:bg-hero-wave desktop:bg-cover desktop:bg-center bg-pinkLight flex gap-10 items-center justify-between h-screen mt-10 px-10 relative overflow-hidden">
+<section class="tablet:bg-hero-wave tablet:bg-cover tablet:bg-center flex gap-10 items-center justify-between h-screen mt-10 px-10 relative overflow-hidden max-tablet:flex-col max-tablet:py-7 max-tablet:h-fit">
   <div class="flex flex-1 flex-col gap-6 relative min-w-[300px] z-[1]">
     <p class="text-2xl text-accent">SPA & Pielęgnacja</p>
     <h1 class="text-2xl tablet:text-5xl font-semibold">
@@ -14,23 +14,31 @@ import { PHONE_NUMBER } from '../constants';
       Osiągnij promienną i zdrowo wyglądającą skórę dzięki sprawdzonym metodom pielęgnacji.
       Pozwól swojej naturalnej urodzie zabłysnąć, czując się pewniej i piękniej każdego dnia!
     </p>
-    <button id="reserveButton" class="accentButton self-start mt-4 py-3 text-xl" aria-label="Zarezerwuj wizytę">
+    <button id="reserveButton" class="accentButton self-start mt-4 py-3 text-xl max-tablet:hidden" aria-label="Zarezerwuj wizytę">
       Zarezerwuj wizytę
     </button>
   </div>
-  <div class="flex h-full z-[1]">
-    <div class="self-end">
+  <div class="flex h-full z-[1] max-desktop:h-26 max-tablet:h-fit">
+    <div class="self-end max-tablet:hidden">
       <Image class="desktop:block hidden" src={heroWoman} alt="Background woman" />
     </div>
-    <div class="text-center border-4 rounded-xl border-accent self-center p-6 min-w-fit">
+    <div class="relative text-center border-4 rounded-xl border-accent bg-pinkLight self-center p-6 min-w-fit">
+      <div class="max-tablet:hidden absolute bottom-6 left-6 w-full h-full border-4 rounded-xl border-accent opacity-50 -z-10">
+      </div>
       <h2 class="text-lg">Jesteśmy otwarci:</h2>
       <ul class="mt-2 flex flex-col gap-2">
         <li>Pon-pt: <span class="font-bold">9:00 - 18:00</span></li>
         <li>Sobota: <span class="font-bold">9:00 - 16:00</span></li>
         <li>Niedziela: <span class="font-bold">Zamknięte</span></li>
         <li id="phoneNumber">tel: <span class="font-bold">+48 {PHONE_NUMBER}</span></li>
+        <li class="font-bold">{ADRESS}</li>
       </ul>
     </div>
+  </div>
+  <div class="tablet:hidden">
+    <button id="reserveButton" class="accentButton self-start my-4 py-3 text-xl" aria-label="Zarezerwuj wizytę">
+      Zarezerwuj wizytę
+    </button>
   </div>
 </section>
 
