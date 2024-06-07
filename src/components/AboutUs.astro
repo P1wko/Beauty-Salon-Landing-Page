@@ -6,11 +6,11 @@ import eyelashes from '../images/eyelashes.png';
 ---
 
 <section
-	class='flex flex-wrap w-full mx-auto items-center justify-center h-screen'
+	class='mobile:flex mobile:flex-row flex-col w-full mx-auto items-center justify-center desktop:min-h-screen desktop:py-10 h-fit py-20 px-10'
 	id='aboutUs'
 >
 	<div
-		class='relative justify-center items-center w-full max-w-[537px] h-[420px] tablet:flex hidden'
+		class='relative justify-center items-center w-full min-w-[420px] max-w-[537px] h-[420px] tablet:flex hidden'
 	>
 		<Image
 			loading='eager'
@@ -31,20 +31,73 @@ import eyelashes from '../images/eyelashes.png';
 			alt='eyelash extension'
 		/>
 	</div>
-	<div class='flex flex-col gap-6 max-w-3xl'>
+	<div class='flex flex-col mobile:gap-6 gap-2 max-w-3xl text-right desktop:text-left'>
 		<p class='text-accent text-2xl'>O nas</p>
-		<h2 class='font-medium tablet:text-5xl text-2xl'>
+		<h2 class='font-medium tablet:text-3xl text-2xl'>
 			Prawdziwe piękno to poczucie komfortu we własnej skórze
 		</h2>
-		<p class='tablet:text-xl text-base'>
+		<p class='tablet:text-lg text-base'>
 			Wierzę, że prawdziwe piękno wyraża się nie tylko w zewnętrznym wyglądzie,
 			ale także wewnętrznym komforcie i pewności siebie. Filozofia salonu opiera
 			się na holistycznym podejściu do pielęgnacji, które nie tylko poprawia
 			kondycję skóry, ale także wzmacnia poczucie pewności siebie moich
 			klientów.
 		</p>
-		<button class='accentButton self-start py-3 text-xl mt-4'
+		<button class='accentButton desktop:self-start py-3 text-xl mt-4 self-end'
 			>Dowiedz się więcej</button
 		>
 	</div>
+	<div id="carousel" class="mobile:hidden py-20">
+		<div class="flex justify-center items-center">
+			<div class="left absolute -left-[25vw]"><Image loading='eager' id="leftCarousel" class="rounded-md w-[45vw] aspect-square shadow-md" src={mask} alt="..."></div>
+			<div><Image loading='eager' id="centerCarousel" class="rounded-md w-[50vw] aspect-square shadow-lg"src={nails} alt="..."></div>
+			<div class="absolute -right-[25vw]"><Image loading='eager' id="rightCarousel" class="rounded-md w-[45vw] aspect-square shadow-md" src={eyelashes} alt="..."></div>
+		</div>
+	</div>
 </section>
+
+<script>
+    import mask from '../images/mask.png';
+    import nails from '../images/nails.png';
+    import eyelashes from '../images/eyelashes.png';
+    import serum from '../images/serum.png';
+    import eyelashesAdjustment from '../images/eyelashesAdjustment.png';
+
+    const leftCarousel = document.getElementById('leftCarousel') as HTMLImageElement;
+    const centerCarousel = document.getElementById('centerCarousel') as HTMLImageElement;
+    const rightCarousel = document.getElementById('rightCarousel') as HTMLImageElement;
+
+    const imageVariables = [mask, nails, eyelashes, serum, eyelashesAdjustment];
+
+    let currentIndex = 0;
+    let intervalId = null;
+
+    function changeImages() {
+        rightCarousel.src = imageVariables[(currentIndex + imageVariables.length - 1) % imageVariables.length].src;
+        centerCarousel.src = imageVariables[currentIndex].src;
+        leftCarousel.src = imageVariables[(currentIndex + 1) % imageVariables.length].src;
+        currentIndex = (currentIndex + 1) % imageVariables.length;
+    }
+
+    function startInterval() {
+        stopInterval();
+        intervalId = setInterval(changeImages, 3500);
+    }
+
+    function stopInterval() {
+        clearInterval(intervalId);
+    }
+
+    function handleResize() {
+        if (window.innerWidth < 480) {
+            startInterval();
+        } else {
+            stopInterval();
+        }
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+</script>
+
