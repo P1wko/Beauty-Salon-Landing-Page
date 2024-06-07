@@ -1,11 +1,15 @@
 ---
+import { isRenderTemplateResult } from 'astro/runtime/server/render/astro/render-template.js';
 import { Image } from 'astro:assets';
 
 
 
-const bestSellersList1 = [
-{title: 'Makijaż okazjonalny', price: '150zł'},
-{title:'', price:''},
+const bestSellers = [
+  {
+    section: 'faceTreatments',
+    items: [
+    {title: 'Makijaż okazjonalny', price: '150zł'},
+    {title:'', price:''},
 
   { title: 'Zabiegi na twarz:', price: ''},
   {title:'', price:''},
@@ -24,10 +28,13 @@ const bestSellersList1 = [
     {title:'', price:''},
     
     {title: 'Peelingi kawitacyjne z ampułką i maską:', price: '170zł'},
-    {title: 'Kwasy i maska:', price: '100zł'}];
+    {title: 'Kwasy i maska:', price: '100zł'}
+    ]
+  },
 
-
-    const bestSellersList2 = [
+  { section: 'bodyTreatments',
+  items: [
+  
   {title: 'Zabiegi na ciało', price: ''},
   {title:'', price:''},
 
@@ -52,9 +59,12 @@ const bestSellersList1 = [
       {title: '3D', price: '130-150zł'},
       {title: '4D', price: '140-160zł'},
       {title: '5D', price: '150-170zł'},
-      {title: '6D', price: '160-180zł'} ];
-    
-      const bestSellersList3 = [
+      {title: '6D', price: '160-180zł'} ]},
+
+
+    {section: 'waxTreatments',
+    items: [
+      
   {title: 'Wosk', price: ''},
   {title:'', price:''},
 
@@ -68,7 +78,9 @@ const bestSellersList1 = [
       {title: 'Manicure hybrydowy:', price: '60zł'},
       {title: 'Manicure żelowy z przedłużeniem:', price: '90zł'},
       {title: 'Zabieg pielęgnacyjny na dłonie:', price: '60zł'},
-      {title: 'Zabieg pielęgnacyjny na stopy:', price: '60zł'},
+      {title: 'Zabieg pielęgnacyjny na stopy:', price: '60zł'}
+]
+}
 ];
 
 const boldTitles = [
@@ -83,39 +95,19 @@ const pinkText = 'Zabiegi dopasowywuję do indywidualnych potrzeb skóry, po jej
 ---
 
 <ul class="flex mt-[40px] flex-wrap justify-between">
-  <li class="rounded-lg shadow-lg bg-white w-full mobile:w-full tablet:w-[48%] desktop:w-[32%]">
-    <ul>
-    {bestSellersList1.map(({ title, price}) => (
+  {bestSellers.map(({section, items}) => (
+<li class="rounded-lg shadow-lg bg-white w-full mobile:w-full tablet:w-[48%] desktop:w-[32%]">
+  <ul>
+    {items.map(({ title, price}) => (
   
   <div class="flex justify-between px-[20px] pt-[10px] pb-[10px]">
           <h3 class={`text-base mb-[1px] text-left ${boldTitles.includes(title) ? 'font-bold' : ''} ${title === pinkText ? 'text-accent' : ''}`}>{title}</h3>
           <p class="font-bold  text-right">{price}</p>
   </div>
-    ))
+  ))} </ul></li>
+  ))
   }
-</ul></li>
-<li class="rounded-lg shadow-lg bg-white w-full mobile:w-full tablet:w-[48%] desktop:w-[32%]">
-  <ul>
-  {bestSellersList2.map(({ title, price}) => (
-    
+</ul>
 
-    <div class="flex justify-between px-[20px] pt-[10px] pb-[10px]">
-          <h3 class={`text-base mb-[1px] text-left ${boldTitles.includes(title) ? 'font-bold' : ''} ${title === pinkText ? 'text-accent' : ''}`}>{title}</h3>
-          <p class="font-bold  text-right">{price}</p>
-  </div>
-  ))
-}
-</ul></li>
 
-<li class="rounded-lg shadow-lg bg-white w-full mobile:w-full tablet:w-[48%] desktop:w-[32%]">
-  <ul>
-  {bestSellersList3.map(({ title, price}) => (
-    
-<div class="flex justify-between px-[20px] pt-[10px] pb-[10px]">
-          <h3 class={`text-base mb-[1px] text-left ${boldTitles.includes(title) ? 'font-bold' : ''} ${title === pinkText ? 'text-accent' : ''}`}>{title}</h3>
-          <p class="font-bold  text-right">{price}</p>
-  </div>
-  ))
-}
-</ul></li>
 
