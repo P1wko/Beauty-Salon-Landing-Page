@@ -28,7 +28,7 @@ const { title } = Astro.props;
   <body>
     <header class="px-[100px] mx-auto pt-[45px]">
     </header>
-    <main class="px-[60px] mx-auto max-desktop:px-1">
+    <main class="px-[60px] mx-auto max-desktop:px-1 bg-mainBackgroud">
       <NavBar />
       <Hero />
       <AboutUs />
@@ -40,7 +40,7 @@ const { title } = Astro.props;
       <!-- <Appoinment /> -->
       <section class="newsFeed"></section>
       <footer
-        class="flex bg-pinkLight pt-[60px] pb-[45px] px-[60px] justify-between items-center"
+        class="flex pt-[60px] pb-[45px] px-[60px] justify-between items-center"
       >
         <div class="text-gray">
           <Image src={logo} alt="logo" loading="lazy" width="100" />
