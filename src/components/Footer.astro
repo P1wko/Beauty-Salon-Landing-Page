@@ -8,31 +8,33 @@ import { PHONE_NUMBER } from "../constants";
   class="flex bg-footer-wave bg-no-repeat bg-cover p-16 justify-between items-center"
 >
   <div class="text-gray">
-    <Image src={logo} alt="logo" loading="lazy" width="100" />
-    <p class="mt-[15px]">
+    <Image src={logo} alt="logo" loading="lazy" width="150" />
+    <p class="mt-[10px]">
       Salon piękności w twojej okolicy, <br /> który podkreśli Twoje piękno
     </p>
-    <address class="flex flex-col mt-[15px]">
+    <address class="flex flex-col mt-1">
       <a
-        class="hover:text-accent"
+        class="hover:text-accent font-bold not-italic"
         href=`tel:${PHONE_NUMBER}`
-        aria-label="phone number">{PHONE_NUMBER}</a
+        aria-label="phone number">tel. + 48 {PHONE_NUMBER}</a
       >
     </address>
   </div>
   <div class="">
-    <h2 class="title text-[25px]">About Us</h2>
-    <ul class="mt-[15px] gap-4 flex flex-col text-gray">
+    <h2 class="title text-[25px]">Nawigacja</h2>
+    <ul class="mt-[15px] gap-4 flex flex-col text-base">
       <li class="hover:text-accent">
-        <a href="#services">Services</a>
+        <a href="#">Strona Główna</a>
       </li>
-      <li class="hover:text-accent"><a href="">Features</a></li>
-      <li class="hover:text-accent"><a href="">Discount</a></li>
-      <li class="hover:text-accent"><a href="">Term & Condition</a></li>
+      <li class="hover:text-accent">
+        <a href="#services">O nas</a>
+      </li>
+      <li class="hover:text-accent"><a href="">Usługi</a></li>
+      <li class="hover:text-accent"><a href="">Cennik</a></li>
     </ul>
   </div>
   <div class="">
-    <h2 class="title text-[25px]">Quick Links</h2>
+    <h2 class="title text-[25px]">Linki</h2>
     <ul class="mt-[15px] gap-4 flex flex-col text-gray">
       <li class="hover:text-accent"><a href="#">Home</a></li>
       <li class="hover:text-accent"><a href="">Beauty tips</a></li>
