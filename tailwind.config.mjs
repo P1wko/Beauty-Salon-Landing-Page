@@ -14,6 +14,7 @@ export default {
         swatch_6: '#de7594',
         swatch_7: '#a74f46',
         swatch_8: '#c0956b',
+        darkGray: '#646464',
       },
     },
     screens: {

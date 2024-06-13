@@ -2,17 +2,18 @@
 import { Image } from "astro:assets";
 import logo from "../images/logo.png";
 import { PHONE_NUMBER } from "../constants";
+import develoartLogo from "../images/develoartLogo.png";
 ---
 
 <footer
   class="flex bg-footer-wave bg-no-repeat bg-cover p-16 justify-between items-center"
 >
-  <div class="text-gray">
+  <div class="text-darkGray flex flex-col items-center">
     <Image src={logo} alt="logo" loading="lazy" width="150" />
-    <p class="mt-[10px]">
+    <p class="mt-[10px] leading-loose">
       Salon piękności w twojej okolicy, <br /> który podkreśli Twoje piękno
     </p>
-    <address class="flex flex-col mt-1">
+    <address class="flex flex-col mt-1 self-start">
       <a
         class="hover:text-accent font-bold not-italic"
         href=`tel:${PHONE_NUMBER}`
@@ -35,14 +36,25 @@ import { PHONE_NUMBER } from "../constants";
   </div>
   <div class="">
     <h2 class="title text-[25px]">Linki</h2>
-    <ul class="mt-[15px] gap-4 flex flex-col text-gray">
-      <li class="hover:text-accent"><a href="#">Home</a></li>
-      <li class="hover:text-accent"><a href="">Beauty tips</a></li>
-      <li class="hover:text-accent"><a href="">Blog</a></li>
-      <li class="hover:text-accent"><a href="">Contact us</a></li>
+    <ul class="mt-[15px] gap-4 flex flex-col text-base">
+      <li class="hover:text-accent">
+        <a
+          href="https://www.facebook.com/profile.php?id=61557345552094&locale=pl_PL"
+          target="_blank">Facebook</a
+        >
+      </li>
+      <li class="hover:text-accent"><a href="">Opinie</a></li>
+      <li class="hover:text-accent">
+        <a href="">Gdzie nas znaleźć</a>
+      </li>
     </ul>
   </div>
-  <div class="">
-    <h2 class="title text-[25px]">Get in touch</h2>
-  </div>
+  <a href="https://develoart.com/" target="_blank" class="block">
+    <div class="text-gray flex flex-col items-center mt-20">
+      <Image src={develoartLogo} alt="develoart" loading="lazy" width="50" />
+      <p class="mt-[10px] text-center">
+        Strona stworzona przez<br />zespół DeveloArt
+      </p>
+    </div>
+  </a>
 </footer>
