@@ -9,15 +9,15 @@ import develoartLogo from "../images/develoartLogo.png";
   class="flex bg-footer-wave bg-no-repeat bg-cover p-16 justify-between items-center"
 >
   <div class="text-darkGray flex flex-col items-center">
-    <Image src={logo} alt="logo" loading="lazy" width="150" />
+    <a href="#"> <Image src={logo} alt="logo" loading="lazy" width="200" /></a>
     <p class="mt-[10px] leading-loose">
       Salon piękności w twojej okolicy, <br /> który podkreśli Twoje piękno
     </p>
     <address class="flex flex-col mt-1 self-start">
       <a
-        class="hover:text-accent font-bold not-italic"
+        class="hover:text-accent not-italic"
         href=`tel:${PHONE_NUMBER}`
-        aria-label="phone number">tel. + 48 {PHONE_NUMBER}</a
+        aria-label="phone number">tel. + <b>48 {PHONE_NUMBER}</b></a
       >
     </address>
   </div>
@@ -28,10 +28,10 @@ import develoartLogo from "../images/develoartLogo.png";
         <a href="#">Strona Główna</a>
       </li>
       <li class="hover:text-accent">
-        <a href="#services">O nas</a>
+        <a href="#aboutUs">O nas</a>
       </li>
-      <li class="hover:text-accent"><a href="">Usługi</a></li>
-      <li class="hover:text-accent"><a href="">Cennik</a></li>
+      <li class="hover:text-accent"><a href="#services">Usługi</a></li>
+      <li class="hover:text-accent"><a href="#prices">Cennik</a></li>
     </ul>
   </div>
   <div class="">
