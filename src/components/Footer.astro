@@ -6,7 +6,7 @@ import develoartLogo from "../images/develoartLogo.png";
 ---
 
 <footer
-  class="flex bg-footer-wave bg-no-repeat bg-cover p-16 justify-between items-center"
+  class="flex bg-footer-wave bg-no-repeat bg-cover p-16 justify-between items-center space-x-50"
 >
   <div class="text-darkGray flex flex-col items-center">
     <a href="#"> <Image src={logo} alt="logo" loading="lazy" width="200" /></a>
@@ -21,36 +21,40 @@ import develoartLogo from "../images/develoartLogo.png";
       >
     </address>
   </div>
-  <div class="">
-    <h2 class="title text-[25px]">Nawigacja</h2>
-    <ul class="mt-[15px] gap-4 flex flex-col text-base">
-      <li class="hover:text-accent">
-        <a href="#">Strona Główna</a>
-      </li>
-      <li class="hover:text-accent">
-        <a href="#aboutUs">O nas</a>
-      </li>
-      <li class="hover:text-accent"><a href="#services">Usługi</a></li>
-      <li class="hover:text-accent"><a href="#prices">Cennik</a></li>
-    </ul>
+
+  <div class="flex flex-start mt-auto space-x-20">
+    <div class="mr-20 ml-50">
+      <h2 class="title font-normal text-[25px]">Nawigacja</h2>
+      <ul class="mt-[15px] gap-1 flex flex-col text-base">
+        <li class="hover:text-accent">
+          <a href="#">Strona Główna</a>
+        </li>
+        <li class="hover:text-accent">
+          <a href="#aboutUs">O nas</a>
+        </li>
+        <li class="hover:text-accent"><a href="#services">Usługi</a></li>
+        <li class="hover:text-accent"><a href="#prices">Cennik</a></li>
+      </ul>
+    </div>
+    <div class="ml-10 mr-0">
+      <h2 class="title font-normal text-[25px]">Linki</h2>
+      <ul class="mt-[15px] gap-1 flex flex-col text-base">
+        <li class="hover:text-accent">
+          <a
+            href="https://www.facebook.com/profile.php?id=61557345552094&locale=pl_PL"
+            target="_blank">Facebook</a
+          >
+        </li>
+        <li class="hover:text-accent"><a href="">Opinie</a></li>
+        <li class="hover:text-accent">
+          <a href="">Gdzie nas znaleźć</a>
+        </li>
+      </ul>
+    </div>
   </div>
-  <div class="">
-    <h2 class="title text-[25px]">Linki</h2>
-    <ul class="mt-[15px] gap-4 flex flex-col text-base">
-      <li class="hover:text-accent">
-        <a
-          href="https://www.facebook.com/profile.php?id=61557345552094&locale=pl_PL"
-          target="_blank">Facebook</a
-        >
-      </li>
-      <li class="hover:text-accent"><a href="">Opinie</a></li>
-      <li class="hover:text-accent">
-        <a href="">Gdzie nas znaleźć</a>
-      </li>
-    </ul>
-  </div>
-  <a href="https://develoart.com/" target="_blank" class="block">
-    <div class="text-gray flex flex-col items-center mt-20">
+
+  <a href="https://develoart.com/" target="_blank" class="block self-end">
+    <div class="text-gray flex flex-col items-center">
       <Image src={develoartLogo} alt="develoart" loading="lazy" width="50" />
       <p class="mt-[10px] text-center">
         Strona stworzona przez<br />zespół DeveloArt
