@@ -1,40 +1,123 @@
 ---
-import { Image } from 'astro:assets';
-import heirRebonding from '../images/heirRebonding.webp';
-import hurbalSkincare from '../images/hurbalSkincare.webp';
-import eyelashExtension from '../images/eyelashExtension.webp';
-const bestSellersList = [
+import { isRenderTemplateResult } from "astro/runtime/server/render/astro/render-template.js";
+import { Image } from "astro:assets";
+
+const bestSellers = [
   {
-    image: heirRebonding,
-    title: 'Heir Rebonding',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
-    price: '250',
+    section: "faceTreatments",
+    items: [
+      { title: "Makijaż okazjonalny", price: "150zł" },
+      { title: "", price: "" },
+
+      { title: "Zabiegi na twarz:", price: "" },
+      { title: "", price: "" },
+
+      {
+        title:
+          "Zabiegi dopasowywuję do indywidualnych potrzeb skóry, po jej diagnozie, można je łączyć, zmieniać. Skontaktuj się ze mną, aby uzyskać spersonalizowane porady w sprawie pielęgnacji.",
+        price: "",
+      },
+      { title: "", price: "" },
+
+      { title: "Oczyszczanie wodorowe w terapiach łączonych:", price: "180zł" },
+      { title: "Mezoterapia mikroigłowa z ampułką:", price: "180zł" },
+      { title: "Mezoterapia mikroigłowa z falą radiową:", price: "300zł" },
+      { title: "Fala radiowa na twarz:", price: "180zł" },
+      { title: "Fala radiowa całość (twarz, szyja, dekolt):", price: "220zł" },
+      { title: "", price: "" },
+
+      {
+        title:
+          "Zabiegi pielęgnacyjne nawilżające, ujędrniające, przeciwzmarszczkowe, rozświetlające, wzmacniające naczynka (peeling + masaż twarzy + maska):",
+        price: "150zł",
+      },
+      { title: "", price: "" },
+
+      { title: "Peelingi kawitacyjne z ampułką i maską:", price: "170zł" },
+      { title: "Kwasy i maska:", price: "100zł" },
+    ],
   },
+
   {
-    image: hurbalSkincare,
-    title: 'Hurbal Skincare',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
-    price: '350',
+    section: "bodyTreatments",
+    items: [
+      { title: "Zabiegi na ciało", price: "" },
+      { title: "", price: "" },
+
+      { title: "Liposukcja ultradźwiękowa (strefa):", price: "150zł" },
+      { title: "", price: "" },
+
+      { title: "Brwi oraz rzęsy", price: "" },
+      { title: "", price: "" },
+
+      { title: "Regulacja brwi:", price: "20zł" },
+      { title: "Henna pudrowa z regulacją:", price: "80zł" },
+      { title: "Henna rzęs:", price: "40zł" },
+      { title: "Laminacja brwi:", price: "120zł" },
+      { title: "Laminacja rzęs:", price: "130zł" },
+      { title: "", price: "" },
+
+      { title: "Rzęsy", price: "" },
+      { title: "", price: "" },
+
+      { title: "1:1", price: "110-130zł" },
+      { title: "2D", price: "120-140zł" },
+      { title: "3D", price: "130-150zł" },
+      { title: "4D", price: "140-160zł" },
+      { title: "5D", price: "150-170zł" },
+      { title: "6D", price: "160-180zł" },
+    ],
   },
+
   {
-    image: eyelashExtension,
-    title: 'Eyelash Extension',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
-    price: '299',
+    section: "waxTreatments",
+    items: [
+      { title: "Wosk", price: "" },
+      { title: "", price: "" },
+
+      { title: "Górna warga:", price: "20zł" },
+      { title: "Twarz:", price: "50zł" },
+      { title: "Pachy:", price: "60zł" },
+      { title: "Ręce:", price: "60zł" },
+      { title: "", price: "" },
+
+      { title: "Manicure klasyczny:", price: "50zł" },
+      { title: "Manicure hybrydowy:", price: "60zł" },
+      { title: "Manicure żelowy z przedłużeniem:", price: "90zł" },
+      { title: "Zabieg pielęgnacyjny na dłonie:", price: "60zł" },
+      { title: "Zabieg pielęgnacyjny na stopy:", price: "60zł" },
+    ],
   },
 ];
+
+const boldTitles = [
+  "Zabiegi na twarz:",
+  "Zabiegi na ciało",
+  "Brwi oraz rzęsy",
+  "Rzęsy",
+  "Wosk",
+];
+
+const pinkText =
+  "Zabiegi dopasowywuję do indywidualnych potrzeb skóry, po jej diagnozie, można je łączyć, zmieniać. Skontaktuj się ze mną, aby uzyskać spersonalizowane porady w sprawie pielęgnacji.";
 ---
 
 <ul class="flex mt-[40px] flex-wrap justify-between">
   {
-    bestSellersList.map(({ title, description, price, image }) => (
-      <li class="w-[32%] cursor-pointer rounded-b-lg  shadow-lg hover:shadow-2xl">
-        <Image class="rounded-t-lg h-[250px]" src={image} alt="image" />
-        <div class="border border-pinkLight  border-t-0 px-[20px]  pb-[20px]">
-          <h3 class="font-bold mt-[15px]">{title}</h3>
-          <p class="mt-[10px] font-light">{description}</p>
-          <p class="sectionTitle mt-[20px]">$ {price}</p>
-        </div>
+    bestSellers.map(({ items }) => (
+      <li class="rounded-lg shadow-lg bg-white w-full mobile:w-full tablet:w-[48%] desktop:w-[32%]">
+        <ul>
+          {items.map(({ title, price }) => (
+            <div class="flex justify-between px-[20px] pt-[10px] pb-[10px]">
+              <h3
+                class={`text-base mb-[1px] text-left ${boldTitles.includes(title) && "font-bold"} ${title === pinkText && "text-accent"}`}
+              >
+                {title}
+              </h3>
+              <p class="font-bold  text-right">{price}</p>
+            </div>
+          ))}{" "}
+        </ul>
       </li>
     ))
   }
