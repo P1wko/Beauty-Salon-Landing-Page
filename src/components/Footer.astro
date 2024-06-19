@@ -27,7 +27,7 @@ import develoartLogo from "../images/develoartLogo.png";
     </p>
     <address class="flex flex-col mt-1 self-start">
       <a
-        class="hover:text-accent not-italic"
+        class="hover:text-accent not-italic block"
         href=`tel:${PHONE_NUMBER}`
         aria-label="phone number">tel. + <b>48 {PHONE_NUMBER}</b></a
       >
@@ -47,13 +47,17 @@ import develoartLogo from "../images/develoartLogo.png";
       </h2>
       <ul class="mt-[15px] gap-1 flex flex-col text-darkGray">
         <li class="hover:text-accent">
-          <a href="#">Strona Główna</a>
+          <a class="block" href="#">Strona Główna</a>
         </li>
         <li class="hover:text-accent">
-          <a href="#aboutUs">O nas</a>
+          <a class="block" href="#aboutUs">O nas</a>
         </li>
-        <li class="hover:text-accent"><a href="#services">Usługi</a></li>
-        <li class="hover:text-accent"><a href="#prices">Cennik</a></li>
+        <li class="hover:text-accent">
+          <a class="block" href="#services">Usługi</a>
+        </li>
+        <li class="hover:text-accent">
+          <a class="block" href="#prices">Cennik</a>
+        </li>
       </ul>
     </div>
     <div class="ml-10 mr-0">
@@ -65,13 +69,14 @@ import develoartLogo from "../images/develoartLogo.png";
       <ul class="mt-[15px] gap-1 flex flex-col text-darkGray">
         <li class="hover:text-accent">
           <a
+            class="block"
             href="https://www.facebook.com/profile.php?id=61557345552094&locale=pl_PL"
             target="_blank">Facebook</a
           >
         </li>
-        <li class="hover:text-accent"><a href="">Opinie</a></li>
+        <li class="hover:text-accent"><a class="block" href="">Opinie</a></li>
         <li class="hover:text-accent">
-          <a href="">Gdzie nas znaleźć</a>
+          <a class="block" href="">Gdzie nas znaleźć</a>
         </li>
       </ul>
     </div>
