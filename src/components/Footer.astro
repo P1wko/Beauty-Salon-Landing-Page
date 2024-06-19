@@ -6,10 +6,10 @@ import develoartLogo from "../images/develoartLogo.png";
 ---
 
 <footer
-  class="flex bg-mainBackgroud desktop:p-16 desktop:pt-2 justify-between items-center mobile:p-3 desktop:text-[16px] mobile:text-[12px]"
+  class="flex bg-mainBackgroud desktop:p-16 desktop:pt-2 justify-between items-center mobile:p-3 desktop:text-[16px] mobile:text-[10px] max-mobile:text-[10px]"
 >
   <div
-    class="text-darkGray flex flex-col items-center desktop:mr-20 mobile:mr-4"
+    class="text-darkGray flex flex-col items-center desktop:mr-20 mobile:mr-12 max-mobile:mr-12"
   >
     <a href="#">
       <Image
@@ -17,17 +17,17 @@ import develoartLogo from "../images/develoartLogo.png";
         alt="logo"
         loading="lazy"
         width="200"
-        class="desktop:size-40 mobile:size-20"
+        class="desktop:size-40 mobile:size-20 max-mobile:size-20"
       /></a
     >
     <p
-      class="mt-[10px] desktop:leading-loose mobile:leading-normal mobile:text-balance desktop:text-[16px] mobile:text-[10px] tablet:text-[12px]"
+      class="mt-[10px] desktop:leading-loose mobile:leading-normal max-mobile:leading-normal mobile:text-nowrap max-mobile:text-balance desktop:text-[16px] mobile:text-[10px] tablet:text-[12px]"
     >
-      Salon piękności w twojej okolicy, <br />który podkreśli Twoje piękno
+      Salon piękności w twojej okolicy,<br />który podkreśli Twoje piękno
     </p>
     <address class="flex flex-col mt-1 self-start">
       <a
-        class="hover:text-accent not-italic block"
+        class="hover:text-accent not-italic block mobile:text-[10px]"
         href=`tel:${PHONE_NUMBER}`
         aria-label="phone number">tel. + <b>48 {PHONE_NUMBER}</b></a
       >
@@ -35,13 +35,13 @@ import develoartLogo from "../images/develoartLogo.png";
   </div>
 
   <div
-    class="flex flex-start desktop:mt-auto desktop:space-x-20 mobile:space-x-0 mobile:mt-0 mobile:self-auto tablet:self-end"
+    class="flex flex-start desktop:mt-auto desktop:space-x-20 mobile:space-x-0 max-mobile:space-x-10 mobile:mt-0 mobile:self-auto tablet:self-end"
   >
     <div
-      class="desktop:mr-20 desktop:ml-50 mobile:mr-4 mobile:ml-0 tablet:mr-20 tablet:ml-0"
+      class="desktop:mr-20 desktop:ml-50 mobile:mr-10 mobile:ml-0 max-mobile:mr-2 tablet:mr-20 tablet:ml-0"
     >
       <h2
-        class="text-darkGray font-normal desktop:text-[25px] mobile:text-[18px]"
+        class="text-darkGray font-normal desktop:text-[25px] mobile:text-[14px] max-mobile:text-[14px]"
       >
         Nawigacja
       </h2>
@@ -62,11 +62,13 @@ import develoartLogo from "../images/develoartLogo.png";
     </div>
     <div class="ml-10 mr-0">
       <h2
-        class="text-darkGray font-normal desktop:text-[25px] mobile:text-[18px]"
+        class="text-darkGray font-normal desktop:text-[25px] mobile:text-[14px] mobile:ml-2 max-mobile:text-[14px]"
       >
         Linki
       </h2>
-      <ul class="mt-[15px] gap-1 flex flex-col text-darkGray">
+      <ul
+        class="mt-[15px] gap-1 flex flex-col text-darkGray mobile:ml-2 max-mobile:mr-5"
+      >
         <li class="hover:text-accent">
           <a
             class="block"
@@ -93,9 +95,11 @@ import develoartLogo from "../images/develoartLogo.png";
         alt="develoart"
         loading="lazy"
         width="50"
-        class="desktop:w-20 mobile:w-10"
+        class="desktop:w-20 mobile:w-10 max-mobile:w-8"
       />
-      <p class="mt-[10px] text-center desktop:text-[12px] mobile:text-[8px]">
+      <p
+        class="mt-[10px] text-center desktop:text-[12px] mobile:text-[8px] max-mobile:text-[8px]"
+      >
         Strona stworzona przez<br />zespół DeveloArt
       </p>
     </div>
