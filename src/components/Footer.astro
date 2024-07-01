@@ -1,51 +1,107 @@
 ---
-import { Image } from 'astro:assets';
-import logo from "../images/logo.png"
-import { PHONE_NUMBER } from '../constants';
+import { Image } from "astro:assets";
+import logo from "../images/logo.png";
+import { PHONE_NUMBER } from "../constants";
+import develoartLogo from "../images/develoartLogo.png";
 ---
 
 <footer
-class="flex p-16 justify-between items-center"
+  class="flex bg-mainBackgroud desktop:p-16 desktop:pt-2 justify-between items-center mobile:p-3 desktop:text-[16px] mobile:text-[10px] max-mobile:text-[10px] tablet:text-[12px]"
 >
-<div class="text-gray">
-  <Image src={logo} alt="logo" loading="lazy" width="100" />
-  <p class="mt-[15px]">
-    A perfect beauty salon near you <br /> to make you more beautiful
-  </p>
-  <address class="flex flex-col mt-[15px]">
-    <a
-      class="hover:text-accent"
-      href=`tel:${PHONE_NUMBER}`
-      aria-label="phone number">{PHONE_NUMBER}</a
+  <div
+    class="text-darkGray flex flex-col items-center desktop:mr-20 mobile:mr-12 max-mobile:mr-12"
+  >
+    <a href="#">
+      <Image
+        src={logo}
+        alt="logo"
+        loading="lazy"
+        width="200"
+        class="desktop:size-40 mobile:size-20 max-mobile:size-20"
+      /></a
     >
-    <!-- <a
-      class="hover:text-accent"
-      href="mailto:salon@gmail.com"
-      aria-label="email">salon@gmail.com</a
-    > -->
-  </address>
-</div>
-<div class="">
-  <h2 class="title text-[25px]">About Us</h2>
-  <ul class="mt-[15px] gap-4 flex flex-col text-gray">
-    <li class="hover:text-accent">
-      <a href="#services">Services</a>
-    </li>
-    <li class="hover:text-accent"><a href="">Features</a></li>
-    <li class="hover:text-accent"><a href="">Discount</a></li>
-    <li class="hover:text-accent"><a href="">Term & Condition</a></li>
-  </ul>
-</div>
-<div class="">
-  <h2 class="title text-[25px]">Quick Links</h2>
-  <ul class="mt-[15px] gap-4 flex flex-col text-gray">
-    <li class="hover:text-accent"><a href="#">Home</a></li>
-    <li class="hover:text-accent"><a href="">Beauty tips</a></li>
-    <li class="hover:text-accent"><a href="">Blog</a></li>
-    <li class="hover:text-accent"><a href="">Contact us</a></li>
-  </ul>
-</div>
-<div class="">
-  <h2 class="title text-[25px]">Get in touch</h2>
-</div>
+    <p
+      class="mt-[10px] desktop:leading-loose mobile:leading-normal max-mobile:leading-normal mobile:text-nowrap max-mobile:text-balance desktop:text-[16px] mobile:text-[10px] tablet:text-[12px]"
+    >
+      Salon piękności w twojej okolicy,<br />który podkreśli Twoje piękno
+    </p>
+    <address class="flex flex-col mt-1 self-start">
+      <a
+        class="hover:text-accent not-italic block mobile:text-[10px] desktop:text-[16px]"
+        href=`tel:${PHONE_NUMBER}`
+        aria-label="phone number">tel. + <b>48 {PHONE_NUMBER}</b></a
+      >
+    </address>
+  </div>
+
+  <div
+    class="flex flex-start desktop:mt-auto desktop:space-x-20 mobile:space-x-0 tablet:space-x-20 max-mobile:space-x-10 mobile:mt-0 tablet:mt-0 mobile:self-auto tablet:self-auto"
+  >
+    <div
+      class="desktop:mr-20 desktop:ml-50 mobile:mr-10 mobile:ml-0 max-mobile:mr-2 tablet:mr-20 tablet:ml-0"
+    >
+      <h2
+        class="text-darkGray font-normal desktop:text-[25px] mobile:text-[14px] max-mobile:text-[14px]"
+      >
+        Nawigacja
+      </h2>
+      <ul class="mt-[15px] gap-1 flex flex-col text-darkGray">
+        <li class="hover:text-accent">
+          <a class="block" href="#">Strona Główna</a>
+        </li>
+        <li class="hover:text-accent">
+          <a class="block" href="#aboutUs">O nas</a>
+        </li>
+        <li class="hover:text-accent">
+          <a class="block" href="#services">Usługi</a>
+        </li>
+        <li class="hover:text-accent">
+          <a class="block" href="#prices">Cennik</a>
+        </li>
+      </ul>
+    </div>
+    <div class="ml-10 mr-0">
+      <h2
+        class="text-darkGray font-normal desktop:text-[25px] mobile:text-[14px] mobile:ml-2 max-mobile:text-[14px]"
+      >
+        Linki
+      </h2>
+      <ul
+        class="mt-[15px] gap-1 flex flex-col text-darkGray mobile:ml-2 max-mobile:mr-5"
+      >
+        <li class="hover:text-accent">
+          <a
+            class="block"
+            href="https://www.facebook.com/profile.php?id=61557345552094&locale=pl_PL"
+            target="_blank">Facebook</a
+          >
+        </li>
+        <li class="hover:text-accent"><a class="block" href="">Opinie</a></li>
+        <li class="hover:text-accent">
+          <a class="block" href="">Gdzie nas znaleźć</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <a
+    href="https://develoart.com/"
+    target="_blank"
+    class="block desktop:self-end mobile:self-auto"
+  >
+    <div class="text-gray flex flex-col items-center">
+      <Image
+        src={develoartLogo}
+        alt="develoart"
+        loading="lazy"
+        width="50"
+        class="desktop:w-20 mobile:w-10 max-mobile:w-8"
+      />
+      <p
+        class="mt-[10px] text-center desktop:text-[12px] mobile:text-[8px] max-mobile:text-[8px]"
+      >
+        Strona stworzona przez<br />zespół DeveloArt
+      </p>
+    </div>
+  </a>
 </footer>

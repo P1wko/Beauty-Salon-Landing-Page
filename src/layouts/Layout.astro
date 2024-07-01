@@ -1,11 +1,10 @@
 ---
-import NavBar from '../components/NavBar.astro';
-import Hero from '../components/Hero.astro';
-import AboutUs from '../components/AboutUs.astro';
-import Services from '../components/Services.astro';
-import BestSellers from '../components/BestSellers.astro';
-import logo from '../images/logo.png';
-import { Image } from 'astro:assets';
+import NavBar from "../components/NavBar.astro";
+import Hero from "../components/Hero.astro";
+import AboutUs from "../components/AboutUs.astro";
+import Services from "../components/Services.astro";
+import BestSellers from "../components/BestSellers.astro";
+import Footer from "../components/Footer.astro";
 // import Appoinment from '../components/Appoinment.astro';
 
 interface Props {
@@ -26,9 +25,8 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <header class="px-[100px] mx-auto pt-[45px]">
-    </header>
-    <main class="px-[60px] mx-auto max-desktop:px-1 bg-mainBackgroud">
+    <header class="px-[100px] mx-auto pt-[45px]"></header>
+    <main class="px-[60px] mx-auto max-desktop:px-1">
       <NavBar />
       <Hero />
       <AboutUs />
@@ -39,51 +37,8 @@ const { title } = Astro.props;
       <section class="testinaial"></section>
       <!-- <Appoinment /> -->
       <section class="newsFeed"></section>
-      <footer
-        class="flex pt-[60px] pb-[45px] px-[60px] justify-between items-center"
-      >
-        <div class="text-gray">
-          <Image src={logo} alt="logo" loading="lazy" width="100" />
-          <p class="mt-[15px]">
-            A perfect beauty salon near you <br /> to make you more beautiful
-          </p>
-          <address class="flex flex-col mt-[15px]">
-            <a
-              class="hover:text-accent"
-              href="tel:333333333"
-              aria-label="phone number">+48 333 333 333</a
-            >
-            <a
-              class="hover:text-accent"
-              href="mailto:salon@gmail.com"
-              aria-label="email">salon@gmail.com</a
-            >
-          </address>
-        </div>
-        <div class="">
-          <h2 class="title text-[25px]">About Us</h2>
-          <ul class="mt-[15px] gap-4 flex flex-col text-gray">
-            <li class="hover:text-accent">
-              <a href="#services">Services</a>
-            </li>
-            <li class="hover:text-accent"><a href="">Features</a></li>
-            <li class="hover:text-accent"><a href="">Discount</a></li>
-            <li class="hover:text-accent"><a href="">Term & Condition</a></li>
-          </ul>
-        </div>
-        <div class="">
-          <h2 class="title text-[25px]">Quick Links</h2>
-          <ul class="mt-[15px] gap-4 flex flex-col text-gray">
-            <li class="hover:text-accent"><a href="#">Home</a></li>
-            <li class="hover:text-accent"><a href="">Beauty tips</a></li>
-            <li class="hover:text-accent"><a href="">Blog</a></li>
-            <li class="hover:text-accent"><a href="">Contact us</a></li>
-          </ul>
-        </div>
-        <div class="">
-          <h2 class="title text-[25px]">Get in touch</h2>
-        </div>
-      </footer>
+
+      <Footer />
     </main>
   </body>
   <style>
