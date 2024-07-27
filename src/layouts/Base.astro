@@ -16,11 +16,13 @@ const { title } = Astro.props;
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
-    <main class="px-[60px] mx-auto max-desktop:px-1 max-w-screen-large">
+    <main class="px-[60px] mx-auto max-desktop:px-1 max-w-screen-large font-poppins">
       <NavBar />
       <slot />
       <Footer />
